@@ -27,18 +27,18 @@ body{background:#f5f7fa;color:#333;line-height:1.6}
 
 /* HEADER */
 header{
-min-height:70vh;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center
+  min-height:70vh;
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center
 }
 .hero-content{
-background:rgba(0,0,0,.55);
-padding:32px;
-border-radius:16px;
-max-width:760px
+  background:rgba(0,0,0,.55);
+  padding:32px;
+  border-radius:16px;
+  max-width:760px
 }
 .brand-title{font-size:3rem;font-weight:800;color:#fff}
 .brand-sub{font-size:1.4rem;color:#f1f1f1}
@@ -51,100 +51,118 @@ h2{text-align:center;margin-bottom:22px}
 
 /* SERVICES */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px
 }
 .card{
-background:#fff;
-padding:24px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08)
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.08)
 }
 
 /* PRODUCTS */
 .product-gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
 }
 .product-gallery img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:16px;
-cursor:zoom-in;
-box-shadow:0 6px 16px rgba(0,0,0,.15)
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:zoom-in;
+  box-shadow:0 6px 16px rgba(0,0,0,.15)
 }
 
 /* LIGHTBOX */
 .lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999
 }
 .lightbox img{max-width:92%;max-height:92%;border-radius:16px}
 .lightbox.active{display:flex}
 
 /* BUTTON */
 .btn{
-background:#25d366;
-color:#fff;
-padding:14px 28px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold
+  background:#25d366;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold
 }
 
 /* FOOTER */
 footer{
-background:#222;
-color:#aaa;
-text-align:center;
-padding:30px 20px
+  background:#222;
+  color:#aaa;
+  text-align:center;
+  padding:30px 20px
 }
 footer a{color:#25d366;text-decoration:none}
 
 /* FLOATING SHARE + WA */
 .floating-actions{
-position:fixed;
-right:16px;
-bottom:16px;
-display:flex;
-flex-direction:column;
-gap:10px;
-z-index:999
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999
 }
 .share-group button{
-width:42px;height:42px;
-border-radius:50%;
-border:none;
-background:#333;
-color:#fff;
-font-size:12px;
-font-weight:bold;
-cursor:pointer
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:none;
+  background:#333;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.share-group button:hover{
+  transform:scale(1.1);
+  background:#444;
+}
+.share-group svg{
+  width:24px;
+  height:24px;
+  display:block;
 }
 .wa-main{
-width:54px;height:54px;
-border-radius:50%;
-background:#25d366;
-color:#fff;
-font-size:22px;
-text-align:center;
-line-height:54px;
-text-decoration:none
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+.wa-main svg{
+  width:28px;
+  height:28px;
+  display:block;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.brand-title{font-size:2.2rem}
-.brand-sub{font-size:1.2rem}
+  .brand-title{font-size:2.2rem}
+  .brand-sub{font-size:1.2rem}
 }
 </style>
 </head>
@@ -205,21 +223,27 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 <div class="floating-actions">
   <div class="share-group">
     <button onclick="shareWA()" aria-label="Share WhatsApp">
-      <img src="icons/wa.svg" alt="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17 14c0,0 -2,-1 -2,-1 ..."/>
+      </svg>
     </button>
     <button onclick="shareFB()" aria-label="Share Facebook">
-      <img src="icons/fb.svg" alt="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.891h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.891h-2.33V21.878C18.343 21.128 22 16.991 22 12z"/>
+      </svg>
     </button>
     <button onclick="shareX()" aria-label="Share X">
-      <img src="icons/x.svg" alt="X">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2H21.552L14.48 10.06L22.84 22H16.33L11.23 14.88L5.2 22H1.88L9.44 13.38L1.42 2H8.08L12.7 8.4L18.244 2ZM16.97 19.8H18.8L7.08 4.04H5.14L16.97 19.8Z"/>
+      </svg>
     </button>
   </div>
 
   <a href="https://wa.me/6289670910156" class="wa-main" target="_blank" aria-label="Chat WhatsApp">
-    <img src="icons/wa.svg" alt="Chat WA">
+    <svg viewBox="0 0 24 24" fill="#25D366">
+      <path d="M17 14c0,0 -2,-1 -2,-1 ..."/>
+    </svg>
   </a>
-</div>
-<a href="https://wa.me/6289670910156" class="wa-main" target="_blank">💬</a>
 </div>
 
 <!-- LIGHTBOX -->
@@ -232,7 +256,7 @@ const imgs=document.querySelectorAll('.product-gallery img');
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=document.getElementById('lightboxImg');
 imgs.forEach(img=>{
-img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}
+  img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}
 });
 lightbox.onclick=()=>lightbox.classList.remove('active');
 
@@ -245,4 +269,3 @@ function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURI
 
 </body>
 </html>
-
