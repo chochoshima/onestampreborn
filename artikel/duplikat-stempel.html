@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
 <title>Cara Duplikat atau Buat Stempel Baru | ONESTAMP Reborn</title>
 <meta name="description" content="Panduan lengkap cara membuat ulang atau membuat stempel baru di ONESTAMP Reborn.">
 
-<!-- OPEN GRAPH (WAJIB PER ARTIKEL) -->
+<!-- OPEN GRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cara Duplikat atau Buat Stempel Baru">
 <meta property="og:description" content="Panduan lengkap duplikat atau pembuatan stempel baru.">
@@ -16,32 +15,70 @@
 <meta property="og:url" content="https://onestampreborn.pages.dev/artikel/duplikat-stempel.html">
 
 <style>
-body{font-family:Arial;background:#f5f7fa;margin:0}
-.container{max-width:1000px;margin:auto;padding:30px}
-.article{
-background:#fff;
-padding:24px;
-border-radius:16px;
-box-shadow:0 4px 14px rgba(0,0,0,.08)
+*{box-sizing:border-box}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f5f7fa;
+  margin:0;
 }
-.article img{
-width:100%;
-max-width:400px;
-aspect-ratio:1/1;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:20px
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+.article{
+  background:#fff;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.article-img{
+  flex:0 0 320px;
+}
+.article-img img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:14px;
+}
+.article-content{
+  flex:1;
+}
+.article-content h1{
+  margin-top:0;
+}
+.article-content ul{
+  padding-left:18px;
+}
+.article-content li{
+  margin-bottom:10px;
 }
 .share{
-margin-top:30px
+  margin-top:30px;
 }
 .share button{
-background:#1877f2;
-color:#fff;
-border:none;
-padding:10px 18px;
-border-radius:8px;
-cursor:pointer
+  background:#1877f2;
+  color:#fff;
+  border:none;
+  padding:12px 22px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.back{
+  margin-top:20px;
+}
+.back a{
+  text-decoration:none;
+  color:#1877f2;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .article{flex-direction:column}
 }
 </style>
 </head>
@@ -49,42 +86,53 @@ cursor:pointer
 <body>
 
 <div class="container">
-<article class="article">
-  <h1>Cara Duplikat atau Buat Stempel Baru</h1>
+  <article class="article">
 
-  <img src="/images/duplikat.jpg" alt="Duplikat Stempel">
+    <div class="article-img">
+      <img src="/images/duplikat.jpg" alt="Duplikat Stempel">
+    </div>
 
-  <h3>Jika Membuat Ulang / Duplikat Stempel</h3>
-  <ul>
-    <li>Kirim foto hasil cap stempel (tegak lurus atau scan)</li>
-    <li>Format JPEG atau PDF</li>
-    <li>Sertakan ukuran real hasil cap (mm)</li>
-    <li>Konfirmasi warna asli stempel</li>
-    <li>Konfirmasi tulisan yang kurang jelas</li>
-  </ul>
+    <div class="article-content">
+      <h1>Cara Duplikat atau Buat Stempel Baru</h1>
 
-  <h3>Jika Buat Baru</h3>
-  <ul>
-    <li>Kirim desain jika ada (JPEG/PDF)</li>
-    <li>Bisa kirim coretan atau tulisan tangan</li>
-    <li>Jarak antar warna ±1,5 mm</li>
-    <li>Tidak mendukung warna gradasi</li>
-  </ul>
+      <h3>Jika Membuat Ulang / Duplikat Stempel</h3>
+      <ul>
+        <li>Kirim foto hasil cap stempel (tegak lurus atau scan)</li>
+        <li>Format JPEG atau PDF</li>
+        <li>Sertakan ukuran real hasil cap (mm)</li>
+        <li>Konfirmasi warna asli stempel</li>
+        <li>Konfirmasi tulisan yang kurang jelas</li>
+      </ul>
 
-  <p><strong>Nanti kami bantu desain ulang stempelnya.</strong></p>
+      <h3>Jika Buat Baru</h3>
+      <ul>
+        <li>Kirim desain jika ada (JPEG/PDF)</li>
+        <li>Bisa kirim coretan atau tulisan tangan</li>
+        <li>Jarak antar warna ±1,5 mm</li>
+        <li>Tidak mendukung warna gradasi</li>
+      </ul>
 
-  <div class="share">
-    <button onclick="shareFB()">Share ke Facebook</button>
-  </div>
-</article>
+      <p><strong>Nanti kami bantu desain ulang stempelnya.</strong></p>
+
+      <div class="share">
+        <button onclick="shareFB()">Bagikan ke Facebook</button>
+      </div>
+
+      <div class="back">
+        <a href="/">← Kembali ke Beranda</a>
+      </div>
+    </div>
+
+  </article>
 </div>
 
 <script>
 function shareFB(){
   const url = window.location.href;
   window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    'fb','width=550,height=450'
+    'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+    'fbshare',
+    'width=600,height=450'
   );
 }
 </script>
