@@ -250,6 +250,69 @@ footer a{
 }
 
 /* =========================
+   ARTICLE PAGE (DETAIL)
+========================= */
+.article{
+  background:#fff;
+  padding:32px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  display:flex;
+  gap:32px;
+  flex-wrap:wrap;
+  animation:fadeUp .6s ease;
+}
+
+.article-img{
+  flex:0 0 320px;
+}
+
+.article-img img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.article-content{
+  flex:1;
+  min-width:280px;
+}
+
+.article-content h1{
+  margin-bottom:14px;
+  font-size:2rem;
+}
+
+.article-content h3{
+  margin:24px 0 10px;
+  font-size:1.3rem;
+}
+
+.article-content p{
+  margin-bottom:14px;
+  color:#555;
+}
+
+.article-content ul{
+  padding-left:20px;
+  margin-bottom:20px;
+}
+
+.article-content li{
+  margin-bottom:10px;
+  line-height:1.6;
+}
+
+/* SHARE & BACK */
+.article-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+/* =========================
    MOBILE
 ========================= */
 @media(max-width:768px){
