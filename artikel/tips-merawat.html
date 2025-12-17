@@ -18,22 +18,25 @@
   <meta property="og:description" content="Panduan merawat stempel warna agar tahan lama dan tidak mudah rusak.">
   <meta property="og:image" content="https://onestampreborn.pages.dev/images/tips.jpg">
   <meta property="og:url" content="https://onestampreborn.pages.dev/artikel/tips-merawat.html">
-  <link rel="stylesheet" href="css/style.css">
 
+  <!-- GLOBAL STYLE -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-  <div class="container">
+  <main class="container">
+
     <article class="article">
 
-      <!-- GAMBAR -->
+      <!-- IMAGE -->
       <div class="article-img">
         <img src="../images/tips.jpg" alt="Tips Merawat Stempel Warna">
       </div>
 
-      <!-- KONTEN -->
+      <!-- CONTENT -->
       <div class="article-content">
+
         <h1>Tips Merawat Stempel Agar Tahan Lama</h1>
 
         <ul>
@@ -46,19 +49,19 @@
           <li>Gunakan tinta sesuai jenis stempel (Flashstamp tidak boleh tinta pad).</li>
         </ul>
 
-        <div class="share">
-          <button onclick="shareFB()">Bagikan ke Facebook</button>
+        <!-- ACTIONS -->
+        <div class="article-actions">
+          <a href="/" class="btn">← Kembali ke Beranda</a>
+          <button class="share-btn" onclick="shareFB()">Bagikan ke Facebook</button>
         </div>
 
-        <div class="back">
-          <a href="/">← Kembali ke Beranda</a>
-        </div>
       </div>
 
     </article>
-  </div>
 
-  <!-- SCRIPT -->
+  </main>
+
+  <!-- SHARE SCRIPT -->
   <script>
     function shareFB() {
       const url = window.location.href;
@@ -72,4 +75,3 @@
 
 </body>
 </html>
-
