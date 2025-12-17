@@ -110,46 +110,45 @@ padding:30px 20px
 }
 footer a{color:#25d366;text-decoration:none}
 
-<!-- FLOATING ACTIONS -->
-<div class="floating-actions">
-  <div class="share-group">
-    <!-- Facebook -->
-    <button onclick="shareFB()" aria-label="Share Facebook">
-      <svg viewBox="0 0 24 24">
-        <path d="M22,12c0-5.522-4.478-10-10-10S2,6.478,2,12c0,4.991,3.657,9.128,8.438,9.878v-6.988H7.898v-2.89h2.54V9.797
-        c0-2.507,1.492-3.89,3.777-3.89,1.094,0,2.238,0.195,2.238,0.195v2.46h-1.261c-1.243,0-1.63,0.771-1.63,1.562v1.875h2.773
-        l-0.443,2.89h-2.33v6.988C18.343,21.128,22,16.991,22,12z"/>
-      </svg>
-    </button>
-
-    <!-- Twitter / X -->
-    <button onclick="shareX()" aria-label="Share X/Twitter">
-      <svg viewBox="0 0 24 24">
-        <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.26 4.26 0 001.88-2.35 8.59 8.59 0 01-2.7 1.03 4.28 4.28 0 00-7.3 3.9A12.14 12.14 0 013 4.79a4.28 4.28 0 001.32 5.7 4.23 4.23 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.19 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.59 8.59 0 012 19.54a12.1 12.1 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19-.01-.38-.02-.57A8.72 8.72 0 0024 4.56a8.49 8.49 0 01-2.54.7z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- WA CHAT BESAR DENGAN TEKS -->
-  <a href="https://wa.me/6289670910156" class="wa-main" target="_blank" aria-label="Chat WhatsApp">
-    <span style="display:flex;align-items:center;gap:6px;font-weight:bold;">
-      💬 Chat WA
-    </span>
-  </a>
-</div>
-
-<style>
-.floating-actions .wa-main span{
-  color:#fff;
-  font-size:14px;
+/* FLOATING ACTIONS */
+.floating-actions{
+position:fixed;
+right:16px;
+bottom:16px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:999;
+}
+.share-group button{
+width:42px;
+height:42px;
+border-radius:50%;
+border:none;
+background:#333;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.share-group button svg{
+width:20px;
+height:20px;
+fill:#fff;
 }
 .wa-main{
-  width:auto;
-  min-width:120px;
-  padding:10px 14px;
-  justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:120px;
+padding:10px 14px;
+border-radius:8px;
+background:#25D366;
+color:#fff;
+font-weight:bold;
+text-decoration:none;
+font-size:14px;
 }
-</style>
 
 /* MOBILE */
 @media(max-width:768px){
@@ -233,7 +232,7 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 
   <!-- WA CHAT -->
   <a href="https://wa.me/6289670910156" class="wa-main" target="_blank" aria-label="Chat WhatsApp">
-    💬
+    💬 Chat WA
   </a>
 </div>
 
