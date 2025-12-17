@@ -1,82 +1,93 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cara Duplikat atau Buat Stempel Baru | ONESTAMP Reborn</title>
-<meta name="description" content="Panduan lengkap cara membuat ulang atau membuat stempel baru di ONESTAMP Reborn.">
+  <!-- SEO -->
+  <title>Cara Duplikat atau Buat Stempel Baru | ONESTAMP Reborn</title>
+  <meta name="description" content="Panduan lengkap cara membuat ulang atau membuat stempel baru di ONESTAMP Reborn.">
 
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="article">
-<meta property="og:title" content="Cara Duplikat atau Buat Stempel Baru">
-<meta property="og:description" content="Panduan lengkap duplikat atau pembuatan stempel baru.">
-<meta property="og:image" content="https://onestampreborn.pages.dev/images/duplikat.jpg">
-<meta property="og:url" content="https://onestampreborn.pages.dev/artikel/duplikat-stempel.html">
-<link rel="stylesheet" href="css/style.css">
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://onestampreborn.pages.dev/artikel/duplikat-stempel.html">
 
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cara Duplikat atau Buat Stempel Baru">
+  <meta property="og:description" content="Panduan lengkap duplikat atau pembuatan stempel baru di ONESTAMP Reborn.">
+  <meta property="og:image" content="https://onestampreborn.pages.dev/images/duplikat.jpg">
+  <meta property="og:url" content="https://onestampreborn.pages.dev/artikel/duplikat-stempel.html">
+  <meta property="og:site_name" content="ONESTAMP Reborn">
+
+  <!-- GLOBAL STYLE -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<div class="container">
-  <article class="article">
+  <main class="container">
 
-    <div class="article-img">
-      <img src="../images/duplikat.jpg" alt="Duplikat Stempel">
-    </div>
+    <article class="article">
 
-    <div class="article-content">
-      <h1>Cara Duplikat atau Buat Stempel Baru</h1>
-
-      <h3>Jika Membuat Ulang / Duplikat Stempel</h3>
-      <ul>
-        <li>Kirim foto hasil cap stempel (tegak lurus atau scan)</li>
-        <li>Format JPEG atau PDF</li>
-        <li>Sertakan ukuran real hasil cap (mm)</li>
-        <li>Konfirmasi warna asli stempel</li>
-        <li>Konfirmasi tulisan yang kurang jelas</li>
-      </ul>
-
-      <h3>Jika Buat Baru</h3>
-      <ul>
-        <li>Kirim desain jika ada (JPEG/PDF)</li>
-        <li>Bisa kirim coretan atau tulisan tangan</li>
-        <li>Jarak antar warna ±1,5 mm</li>
-        <li>Tidak mendukung warna gradasi</li>
-      </ul>
-
-      <p><strong>Nanti kami bantu desain ulang stempelnya.</strong></p>
-
-      <!-- TOMBOL PEMESANAN -->
-      <div class="order">
-        <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel"
-           target="_blank">
-          Pesan Stempel Sekarang
-        </a>
+      <!-- IMAGE -->
+      <div class="article-img">
+        <img src="../images/duplikat.jpg" alt="Duplikat Stempel">
       </div>
 
-      <div class="article-actions">
-        <a href="/" class="btn">← Beranda</a>
-        <button class="share-btn">Share FB</button>
+      <!-- CONTENT -->
+      <div class="article-content">
+
+        <h1>Cara Duplikat atau Buat Stempel Baru</h1>
+
+        <h3>Jika Membuat Ulang / Duplikat Stempel</h3>
+        <ul>
+          <li>Kirim foto hasil cap stempel (tegak lurus dari atas atau hasil scan).</li>
+          <li>Format file JPEG atau PDF.</li>
+          <li>Sertakan ukuran real hasil cap (panjang × lebar atau diameter, satuan mm).</li>
+          <li>Konfirmasi warna asli stempel.</li>
+          <li>Konfirmasi tulisan jika ada bagian yang kurang jelas.</li>
+        </ul>
+
+        <h3>Jika Buat Stempel Baru</h3>
+        <ul>
+          <li>Kirim desain stempel jika sudah ada (JPEG / PDF).</li>
+          <li>Jika masih konsep, bisa kirim coretan atau tulisan tangan.</li>
+          <li>Untuk stempel lebih dari satu warna, jarak antar warna minimal ±1,5 mm.</li>
+          <li>Tidak mendukung warna gradasi.</li>
+        </ul>
+
+        <p><strong>Nanti kami akan bantu desain ulang stempelnya hingga siap produksi.</strong></p>
+
+        <!-- ORDER BUTTON -->
+        <div class="order">
+          <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20memesan%20stempel"
+             target="_blank" rel="noopener">
+            Pesan Stempel Sekarang
+          </a>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="article-actions">
+          <a href="/" class="btn">← Kembali ke Beranda</a>
+          <button class="share-btn" onclick="shareFB()">Bagikan ke Facebook</button>
+        </div>
+
       </div>
-    </div>
+    </article>
 
-  </article>
-</div>
+  </main>
 
-<script>
-function shareFB(){
-  const url = window.location.href;
-  window.open(
-    'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
-    'fbshare',
-    'width=600,height=450'
-  );
-}
-</script>
+  <!-- SHARE SCRIPT -->
+  <script>
+    function shareFB(){
+      const url = window.location.href;
+      window.open(
+        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+        'fbshare',
+        'width=600,height=450'
+      );
+    }
+  </script>
 
 </body>
 </html>
-
-
