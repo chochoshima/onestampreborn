@@ -5,21 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- SEO BASIC -->
-<meta name="description" content="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan. Cepat, rapi, bisa custom desain.">
-<meta name="keywords" content="stempel, pembuatan stempel, percetakan, stempel custom, cetak kartu nama">
-<meta name="author" content="ONESTAMP Reborn">
+<title>ONESTAMP Reborn | Pusat Pembuatan Stempel & Percetakan</title>
+<meta name="description" content="ONESTAMP Reborn melayani pembuatan stempel, desain, dan percetakan dengan hasil rapi dan cepat.">
+<meta name="keywords" content="stempel, pembuatan stempel, percetakan, stempel custom">
 <meta name="robots" content="index, follow">
 
-<!-- OPEN GRAPH / WHATSAPP -->
+<!-- OPEN GRAPH (UNTUK HALAMAN UTAMA SAJA) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="ONESTAMP Reborn | Pusat Stempel & Percetakan">
 <meta property="og:description" content="Cepat • Rapi • Bisa Custom Design">
 <meta property="og:url" content="https://onestampreborn.pages.dev/">
 <meta property="og:image" content="https://onestampreborn.pages.dev/images/preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<title>ONESTAMP Reborn | Pusat Pembuatan Stempel & Percetakan</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
@@ -27,176 +23,105 @@ body{background:#f5f7fa;color:#333;line-height:1.6}
 
 /* HEADER */
 header{
-  min-height:70vh;
-  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+min-height:70vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
-.hero-content{
-  background:rgba(0,0,0,.55);
-  padding:32px;
-  border-radius:16px;
-  max-width:760px;
+.hero{
+background:rgba(0,0,0,.55);
+padding:32px;
+border-radius:16px;
+max-width:760px;
 }
-.brand-title{font-size:3rem;font-weight:800;color:#fff}
-.brand-sub{font-size:1.4rem;color:#f1f1f1}
-.brand-tagline{font-size:1.05rem;color:#ddd}
+.hero h1{color:#fff;font-size:3rem}
+.hero h2{color:#eee;font-weight:400}
+.hero p{color:#ddd}
 
 /* LAYOUT */
 .container{max-width:1100px;margin:auto;padding:40px 20px}
 section{margin-bottom:60px}
-h2{text-align:center;margin-bottom:22px}
+h2{text-align:center;margin-bottom:24px}
 
 /* SERVICES */
 .services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px
 }
 .card{
-  background:#fff;
-  padding:24px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 4px 14px rgba(0,0,0,.08)
-}
-
-/* PRODUCTS */
-.product-gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px
-}
-.product-gallery img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:16px;
-  cursor:zoom-in;
-  box-shadow:0 6px 16px rgba(0,0,0,.15)
+background:#fff;
+padding:24px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08)
 }
 
 /* ARTICLE */
 .article-grid{
-  display:flex;
-  flex-direction:column;
-  gap:40px;
+display:flex;
+flex-direction:column;
+gap:30px;
 }
 .article-card{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  background:#fff;
-  padding:24px;
-  border-radius:16px;
-  box-shadow:0 4px 14px rgba(0,0,0,.08);
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+background:#fff;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08)
 }
 .article-card img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:12px;
+width:220px;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:12px;
 }
-.article-content{flex:2; min-width:250px}
+.article-content{
+flex:1;
+min-width:250px;
+}
+.article-content h3{margin-bottom:8px}
+.article-content p{color:#666;margin-bottom:12px}
 .article-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
-.share-article{
-  padding:8px 16px;
-  background:#3b5998;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:0.9rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.share-article:hover{
-  background:#2d4373;
-  transform: translateY(-2px);
-}
-
-/* LIGHTBOX */
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999
-}
-.lightbox img{max-width:92%;max-height:92%;border-radius:16px}
-.lightbox.active{display:flex}
-
-/* BUTTON */
 .btn{
-  background:#25d366;
-  color:#fff;
-  padding:14px 28px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold
+background:#25d366;
+color:#fff;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+.share-btn{
+background:#1877f2;
+color:#fff;
+border:none;
+padding:10px 16px;
+border-radius:8px;
+cursor:pointer;
 }
 
 /* FOOTER */
 footer{
-  background:#222;
-  color:#aaa;
-  text-align:center;
-  padding:30px 20px
+background:#222;
+color:#aaa;
+text-align:center;
+padding:30px 20px
 }
 footer a{color:#25d366;text-decoration:none}
 
-/* FLOATING ACTIONS */
-.floating-actions{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  z-index:999;
-}
-.share-group button{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  border:none;
-  background:#333;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.share-group button svg{
-  width:20px;
-  height:20px;
-  fill:#fff;
-}
-.wa-main{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-width:120px;
-  padding:10px 14px;
-  border-radius:8px;
-  background:#25D366;
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-  font-size:14px;
-}
-
 /* MOBILE */
 @media(max-width:768px){
-  .brand-title{font-size:2.2rem}
-  .brand-sub{font-size:1.2rem}
-  .article-card{flex-direction:column;}
+.hero h1{font-size:2.2rem}
+.article-card{flex-direction:column}
+.article-card img{width:100%}
 }
 </style>
 </head>
@@ -204,10 +129,10 @@ footer a{color:#25d366;text-decoration:none}
 <body>
 
 <header>
-  <div class="hero-content">
-    <h1 class="brand-title">ONESTAMP Reborn</h1>
-    <h2 class="brand-sub">Pusat Pembuatan Stempel & Percetakan</h2>
-    <p class="brand-tagline">Cepat • Rapi • Bisa Custom Design</p>
+  <div class="hero">
+    <h1>ONESTAMP Reborn</h1>
+    <h2>Pusat Pembuatan Stempel & Percetakan</h2>
+    <p>Cepat • Rapi • Bisa Custom Design</p>
   </div>
 </header>
 
@@ -230,71 +155,35 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 </section>
 
 <section>
-<h2>Produk Kami</h2>
-<div class="product-gallery">
-  <img src="images/stempel.jpg" alt="Stempel">
-  <img src="images/stempel-logo.jpg" alt="Stempel Logo">
-  <img src="images/kartu-nama.jpg" alt="Kartu Nama">
-  <img src="images/banner.jpg" alt="Banner">
-</div>
-</section>
-
-<section>
 <h2>Artikel Terbaru</h2>
+
 <div class="article-grid">
 
-  <!-- Artikel 1 -->
-  <article class="article-card">
-    <div class="article-img" style="flex:1; min-width:200px;">
-      <img src="images/placeholder1.jpg" alt="Ilustrasi Artikel 1">
+<!-- ARTIKEL 1 -->
+<article class="article-card" data-slug="duplikat-stempel">
+  <img src="images/duplikat.jpg" alt="Duplikat Stempel">
+  <div class="article-content">
+    <h3>Cara Duplikat atau Buat Stempel Baru</h3>
+    <p>Panduan lengkap pengajuan stempel duplikat atau pembuatan stempel baru.</p>
+    <div class="article-actions">
+      <a href="/artikel/duplikat-stempel.html" class="btn">Baca</a>
+      <button class="share-btn">Share FB</button>
     </div>
-    <div class="article-content">
-      <h3>Cara Mengajukan Stempel Baru atau Duplikat</h3>
-      <h4>Jika membuat ulang / Duplikat stempel</h4>
-      <ul>
-        <li>Kirim file foto hasil cap stempel, usahakan tegak lurus atau scan.</li>
-        <li>File bisa JPEG atau PDF.</li>
-        <li>Sertakan ukuran real stempel, bukan gagang, misal 4,3 cm.</li>
-        <li>Konfirmasi warna asli stempel.</li>
-        <li>Konfirmasi tulisan yang kurang jelas.</li>
-      </ul>
-      <h4>Jika Buat Baru</h4>
-      <ul>
-        <li>Kirim desain jika ada, format JPEG/PDF.</li>
-        <li>Jika masih konsep, bisa kirim coretan/tulisan tangan.</li>
-        <li>Untuk stempel berwarna >1 warna, jarak antar warna ~1,5 mm.</li>
-        <li>Tidak bisa warna gradasi.</li>
-        <li>Nanti kami bantu desain ulang stempelnya.</li>
-      </ul>
-      <div class="article-actions">
-        <a href="#" class="btn">Baca Selengkapnya</a>
-        <button class="share-article" data-url="#">Share FB</button>
-      </div>
-    </div>
-  </article>
+  </div>
+</article>
 
-  <!-- Artikel 2 -->
-  <article class="article-card">
-    <div class="article-img" style="flex:1; min-width:200px;">
-      <img src="images/placeholder2.jpg" alt="Ilustrasi Artikel 3">
+<!-- ARTIKEL 2 -->
+<article class="article-card" data-slug="tips-merawat-stempel">
+  <img src="images/tips.jpg" alt="Tips Merawat Stempel">
+  <div class="article-content">
+    <h3>Tips Merawat Stempel Agar Tahan Lama</h3>
+    <p>Tips penting agar stempel awet dan hasil cap tetap optimal.</p>
+    <div class="article-actions">
+      <a href="/artikel/tips-merawat-stempel.html" class="btn">Baca</a>
+      <button class="share-btn">Share FB</button>
     </div>
-    <div class="article-content">
-      <h3>Tips Merawat Stempel Agar Tahan Lama</h3>
-      <ul>
-        <li>Jangan menekan terlalu keras saat penggunaan.</li>
-        <li>Bersihkan stempel setelah digunakan, hindari tinta mengering terlalu lama.</li>
-		<li>Selalu pasang kembali tutup setelah digunakan.</li>
-        <li>Simpan stempel di tempat sejuk dan kering.</li>
-		<li>Hindari menyimpan stempel di dasbord mobil dalam waktu lama, atau tempat dengan resiko panas tinggi lainnya.</li>
-		<li>Pastikan selalu mengisi ulang tinta sebelum benar benar habis atau kering untuk menghindari karet rusak atau retak.</li>
-		<li>Gunakan tinta yang sesuai, untuk Flashstamp jangan pernah gunakan tinta stempel PAD atau tinta permanen karena akan merusak karet stempel.</li>
-      </ul>
-      <div class="article-actions">
-        <a href="#" class="btn">Baca Selengkapnya</a>
-        <button class="share-article" data-url="#">Share FB</button>
-      </div>
-    </div>
-  </article>
+  </div>
+</article>
 
 </div>
 </section>
@@ -302,7 +191,7 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 <section>
 <h2>Hubungi Kami</h2>
 <div style="text-align:center">
-  <a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
+<a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
 </div>
 </section>
 
@@ -313,61 +202,21 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 <p>WhatsApp: <a href="https://wa.me/6289670910156">0896-7091-0156</a></p>
 </footer>
 
-<!-- FLOATING SHARE -->
-<div class="floating-actions">
-  <div class="share-group">
-    <!-- Facebook -->
-    <button onclick="shareFB()" aria-label="Share Facebook">
-      <svg viewBox="0 0 24 24">
-        <path d="M22,12c0-5.522-4.478-10-10-10S2,6.478,2,12c0,4.991,3.657,9.128,8.438,9.878v-6.988H7.898v-2.89h2.54V9.797
-        c0-2.507,1.492-3.89,3.777-3.89,1.094,0,2.238,0.195,2.238,0.195v2.46h-1.261c-1.243,0-1.63,0.771-1.63,1.562v1.875h2.773
-        l-0.443,2.89h-2.33v6.988C18.343,21.128,22,16.991,22,12z"/>
-      </svg>
-    </button>
-    <!-- Twitter / X -->
-    <button onclick="shareX()" aria-label="Share X/Twitter">
-      <svg viewBox="0 0 24 24">
-        <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.26 4.26 0 001.88-2.35 8.59 8.59 0 01-2.7 1.03 4.28 4.28 0 00-7.3 3.9A12.14 12.14 0 013 4.79a4.28 4.28 0 001.32 5.7 4.23 4.23 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.19 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.59 8.59 0 012 19.54a12.1 12.1 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19-.01-.38-.02-.57A8.72 8.72 0 0024 4.56a8.49 8.49 0 01-2.54.7z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- WA CHAT -->
-  <a href="https://wa.me/6289670910156" class="wa-main" target="_blank" aria-label="Chat WhatsApp">
-    💬 Chat WA
-  </a>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-<img id="lightboxImg" alt="Zoom Produk">
-</div>
-
 <script>
-// Lightbox produk
-const imgs=document.querySelectorAll('.product-gallery img');
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=document.getElementById('lightboxImg');
-imgs.forEach(img=>{img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}})
-lightbox.onclick=()=>lightbox.classList.remove('active');
-
-// Share floating
-const text="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan";
-const url=window.location.href;
-function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`)}
-function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`)}
-
-// Share FB per artikel
-const shareButtons=document.querySelectorAll('.share-article');
-shareButtons.forEach(btn=>{
+// SHARE FACEBOOK OTOMATIS PER ARTIKEL
+document.querySelectorAll('.share-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
-    const link=btn.getAttribute('data-url');
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, 
-                'fbShareWindow', 'height=450, width=550, top=100, left=100, toolbar=0, location=0, menubar=0, directories=0, scrollbars=1');
+    const article = btn.closest('.article-card');
+    const slug = article.dataset.slug;
+    const url = `${location.origin}/artikel/${slug}.html`;
+
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      'fb','width=550,height=450'
+    );
   });
 });
 </script>
 
 </body>
 </html>
-
