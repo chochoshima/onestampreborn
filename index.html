@@ -18,17 +18,12 @@
   <meta property="og:description" content="Cepat • Rapi • Bisa Custom • Harga Bersahabat">
   <meta property="og:image" content="https://onestampreborn.pages.dev/images/cover.jpg">
   <meta property="og:url" content="https://onestampreborn.pages.dev/">
-<!-- Tambahkan di head -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-<!-- Floating Button -->
-<a href="https://wa.me/6281234567890" target="_blank"
-   class="fixed bottom-5 right-5 bg-green-500 text-white font-semibold py-3 px-4 rounded-full shadow-lg flex items-center gap-2 animate-pulse hover:scale-110 transition-transform duration-300 z-50">
-   <i class="fab fa-whatsapp text-lg"></i>
-   <span>Pesan Sekarang</span>
-</a>
+  <!-- CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -36,150 +31,148 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="font-inter">
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container nav">
-    <div class="logo">ONESTAMP Reborn</div>
-    <nav class="menu">
-      <a href="/">Beranda</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#produk">Produk</a>
-      <a href="#artikel">Artikel</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <h1>Stempel & Percetakan Profesional</h1>
-  <p>Cepat • Rapi • Bisa Custom Desain • Harga Bersahabat</p>
-  <a
-    href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel"
-    class="btn"
-    target="_blank"
-  >
-    Pesan via WhatsApp
-  </a>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Tentang ONESTAMP Reborn</h2>
-    <p>
-      ONESTAMP Reborn melayani pembuatan stempel dan percetakan dengan hasil presisi,
-      cocok untuk kebutuhan kantor, UMKM, dan instansi. Proses cepat, desain rapi,
-      dan bisa custom sesuai kebutuhan Anda.
-    </p>
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section class="section" id="layanan">
-  <div class="container">
-    <h2>Layanan Kami</h2>
-
-    <div class="services">
-      <div class="card">🖋️ Pembuatan Stempel</div>
-      <div class="card">🎨 Jasa Desain</div>
-      <div class="card">🖨️ Percetakan</div>
+  <!-- ================= HEADER ================= -->
+  <header class="header bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="logo font-bold text-xl">ONESTAMP Reborn</div>
+      <nav class="menu space-x-6">
+        <a href="/" class="hover:text-green-500 transition-colors">Beranda</a>
+        <a href="#layanan" class="hover:text-green-500 transition-colors">Layanan</a>
+        <a href="#produk" class="hover:text-green-500 transition-colors">Produk</a>
+        <a href="#artikel" class="hover:text-green-500 transition-colors">Artikel</a>
+        <a href="#kontak" class="hover:text-green-500 transition-colors">Kontak</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ================= PRODUK ================= -->
-<section class="section" id="produk">
-  <h2>Produk Kami</h2>
-
-  <div class="product-gallery">
-
-    <div class="product-card">
-      <img src="images/stempel.jpg" alt="Stempel">
-      <span>Stempel</span>
-    </div>
-
-    <div class="product-card">
-      <img src="images/stempel-logo.jpg" alt="Stempel Logo">
-      <span>Stempel Logo</span>
-    </div>
-
-    <div class="product-card">
-      <img src="images/kartu-nama.jpg" alt="Kartu Nama">
-      <span>Kartu Nama</span>
-    </div>
-
-    <div class="product-card">
-      <img src="images/banner.jpg" alt="Banner">
-      <span>Banner</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= ARTIKEL ================= -->
-<section class="section" id="artikel">
-  <div class="container">
-    <h2>Artikel & Panduan</h2>
-
-    <div class="services">
-
-      <div class="card">
-        <h3>Cara Duplikat atau Buat Stempel Baru</h3>
-        <p>Panduan lengkap jika ingin membuat ulang atau membuat stempel baru.</p>
-        <a href="/artikel/duplikat-stempel.html" class="link">Baca selengkapnya →</a>
-      </div>
-
-      <div class="card">
-        <h3>Tips Merawat Stempel Warna</h3>
-        <p>Cara merawat stempel agar awet dan hasil cap tetap maksimal.</p>
-        <a href="/artikel/tips-merawat.html" class="link">Baca selengkapnya →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="section cta">
-  <div class="container">
-    <h2>Siap Pesan Stempel?</h2>
-    <p>Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
+  <!-- ================= HERO ================= -->
+  <section class="hero bg-green-100 text-center py-20">
+    <h1 class="text-4xl font-bold mb-4">Stempel & Percetakan Profesional</h1>
+    <p class="text-lg mb-6">Cepat • Rapi • Bisa Custom Desain • Harga Bersahabat</p>
     <a
       href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel"
-      class="btn"
+      class="btn bg-green-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-green-600 transition-colors"
       target="_blank"
     >
-      Pesan Sekarang
+      Pesan via WhatsApp
     </a>
-  </div>
-</section>
+  </section>
 
-<!-- ================= HALAMAN KONTAK ================= -->
-<section id="kontak" class="contact-section section">
-  <div class="container">
-    <h2>Kontak & Lokasi Toko</h2>
-    <p><strong>ONESTAMP Reborn</strong></p>
-    <p>📍 Jl. Jayanegara No.37, Gg. Melati, RT.11/RW.05</p>
-    <p>Langensari Barat, Ungaran Barat, Kabupaten Semarang, 50518</p>
-    <p>🕒 Jam Operasional: Senin–Sabtu, 08.00–17.00</p>
-<p>Diluar jam operasional silakan kontak WA</p>
-    <p>📞 WhatsApp: <a href="https://wa.me/6289670910156" target="_blank">+62 896 7091 0156</a></p>
-    <p>🔗 <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Jayanegara+No.37+Ungaran+Barat" target="_blank">Buka di Google Maps</a></p>
-  </div>
-</section>
+  <!-- ================= ABOUT ================= -->
+  <section class="section py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4">Tentang ONESTAMP Reborn</h2>
+      <p>
+        ONESTAMP Reborn melayani pembuatan stempel dan percetakan dengan hasil presisi,
+        cocok untuk kebutuhan kantor, UMKM, dan instansi. Proses cepat, desain rapi,
+        dan bisa custom sesuai kebutuhan Anda.
+      </p>
+    </div>
+  </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container">
-    <p><strong>ONESTAMP Reborn</strong></p>
-    <p>📍 Jl. Jayanegara No.37, Gg. Melati, RT.11/RW.05, Langensari Barat, Ungaran Barat, Kab. Semarang, 50518</p>
-    <p>📞 WhatsApp: <a href="https://wa.me/6289670910156" target="_blank">+62 896 7091 0156</a></p>
-    <p>© 2025 ONESTAMP Reborn. All Rights Reserved.</p>
-  </div>
-</footer>
+  <!-- ================= SERVICES ================= -->
+  <section class="section py-16 bg-gray-50" id="layanan">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8">Layanan Kami</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-6 bg-white shadow-md rounded-lg text-center">🖋️ Pembuatan Stempel</div>
+        <div class="card p-6 bg-white shadow-md rounded-lg text-center">🎨 Jasa Desain</div>
+        <div class="card p-6 bg-white shadow-md rounded-lg text-center">🖨️ Percetakan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUK ================= -->
+  <section class="section py-16" id="produk">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8">Produk Kami</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="product-card text-center">
+          <img src="images/stempel.jpg" alt="Stempel" class="mx-auto mb-2">
+          <span>Stempel</span>
+        </div>
+        <div class="product-card text-center">
+          <img src="images/stempel-logo.jpg" alt="Stempel Logo" class="mx-auto mb-2">
+          <span>Stempel Logo</span>
+        </div>
+        <div class="product-card text-center">
+          <img src="images/kartu-nama.jpg" alt="Kartu Nama" class="mx-auto mb-2">
+          <span>Kartu Nama</span>
+        </div>
+        <div class="product-card text-center">
+          <img src="images/banner.jpg" alt="Banner" class="mx-auto mb-2">
+          <span>Banner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTIKEL ================= -->
+  <section class="section py-16 bg-gray-50" id="artikel">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8">Artikel & Panduan</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card p-6 bg-white shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold mb-2">Cara Duplikat atau Buat Stempel Baru</h3>
+          <p class="mb-2">Panduan lengkap jika ingin membuat ulang atau membuat stempel baru.</p>
+          <a href="/artikel/duplikat-stempel.html" class="text-green-500 hover:underline">Baca selengkapnya →</a>
+        </div>
+        <div class="card p-6 bg-white shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold mb-2">Tips Merawat Stempel Warna</h3>
+          <p class="mb-2">Cara merawat stempel agar awet dan hasil cap tetap maksimal.</p>
+          <a href="/artikel/tips-merawat.html" class="text-green-500 hover:underline">Baca selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section py-16 text-center bg-green-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4">Siap Pesan Stempel?</h2>
+      <p class="mb-6">Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
+      <a
+        href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel"
+        class="btn bg-green-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+        target="_blank"
+      >
+        Pesan Sekarang
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= KONTAK ================= -->
+  <section id="kontak" class="contact-section section py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4">Kontak & Lokasi Toko</h2>
+      <p><strong>ONESTAMP Reborn</strong></p>
+      <p>📍 Jl. Jayanegara No.37, Gg. Melati, RT.11/RW.05</p>
+      <p>Langensari Barat, Ungaran Barat, Kabupaten Semarang, 50518</p>
+      <p>🕒 Jam Operasional: Senin–Sabtu, 08.00–17.00</p>
+      <p>Diluar jam operasional silakan kontak WA</p>
+      <p>📞 WhatsApp: <a href="https://wa.me/6289670910156" target="_blank">+62 896 7091 0156</a></p>
+      <p>🔗 <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Jayanegara+No.37+Ungaran+Barat" target="_blank">Buka di Google Maps</a></p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p><strong>ONESTAMP Reborn</strong></p>
+      <p>📍 Jl. Jayanegara No.37, Gg. Melati, RT.11/RW.05, Langensari Barat, Ungaran Barat, Kab. Semarang, 50518</p>
+      <p>📞 WhatsApp: <a href="https://wa.me/6289670910156" target="_blank" class="text-green-400">+62 896 7091 0156</a></p>
+      <p>© 2025 ONESTAMP Reborn. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING BUTTON ================= -->
+  <a href="https://wa.me/6289670910165" target="_blank"
+     class="fixed bottom-5 right-5 bg-green-500 text-white font-semibold py-3 px-4 rounded-full shadow-lg flex items-center gap-2 animate-pulse hover:scale-110 transition-transform duration-300 z-50">
+     <i class="fab fa-whatsapp text-lg"></i>
+     <span>Pesan Sekarang</span>
+  </a>
 
 </body>
 </html>
