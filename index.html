@@ -203,10 +203,21 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 
 <!-- FLOATING SHARE -->
 <div class="floating-actions">
-<div class="share-group">
-<button onclick="shareWA()">WA</button>
-<button onclick="shareFB()">FB</button>
-<button onclick="shareX()">X</button>
+  <div class="share-group">
+    <button onclick="shareWA()" aria-label="Share WhatsApp">
+      <img src="icons/wa.svg" alt="WhatsApp">
+    </button>
+    <button onclick="shareFB()" aria-label="Share Facebook">
+      <img src="icons/fb.svg" alt="Facebook">
+    </button>
+    <button onclick="shareX()" aria-label="Share X">
+      <img src="icons/x.svg" alt="X">
+    </button>
+  </div>
+
+  <a href="https://wa.me/6289670910156" class="wa-main" target="_blank" aria-label="Chat WhatsApp">
+    <img src="icons/wa.svg" alt="Chat WA">
+  </a>
 </div>
 <a href="https://wa.me/6289670910156" class="wa-main" target="_blank">💬</a>
 </div>
@@ -234,3 +245,4 @@ function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURI
 
 </body>
 </html>
+
