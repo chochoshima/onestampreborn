@@ -23,178 +23,187 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
-body{background:#f5f7fa;color:#333;line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;}
+body{background:#f5f7fa;color:#333;line-height:1.6}
 
 /* HEADER */
 header{
-  position: relative;
-  min-height: 100vh; /* penuh layar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('images/header.jpg') center center/cover no-repeat;
-  overflow: hidden;
+  min-height:70vh;
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 .hero-content{
-  background: rgba(0,0,0,.55);
-  padding: 40px 32px;
-  border-radius: 16px;
-  max-width: 760px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  background:rgba(0,0,0,.55);
+  padding:32px;
+  border-radius:16px;
+  max-width:760px;
 }
-.brand-title{font-size:3rem;font-weight:800;color:#fff;transition: transform 0.3s ease;}
-.brand-sub{font-size:1.4rem;color:#f1f1f1;}
-.brand-tagline{font-size:1.05rem;color:#ddd;}
+.brand-title{font-size:3rem;font-weight:800;color:#fff}
+.brand-sub{font-size:1.4rem;color:#f1f1f1}
+.brand-tagline{font-size:1.05rem;color:#ddd}
 
 /* LAYOUT */
 .container{max-width:1100px;margin:auto;padding:40px 20px}
-section{margin-bottom:60px;opacity:0;transform: translateY(30px);transition: all 0.8s ease;}
+section{margin-bottom:60px}
 h2{text-align:center;margin-bottom:22px}
 
 /* SERVICES */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px
 }
 .card{
-background:#fff;
-padding:24px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
-cursor:pointer;
-transition: all 0.3s ease;
-}
-.card:hover{
-transform: translateY(-8px) scale(1.03);
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.08)
 }
 
 /* PRODUCTS */
 .product-gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
 }
 .product-gallery img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:16px;
-cursor:zoom-in;
-box-shadow:0 6px 16px rgba(0,0,0,.15);
-transition: transform 0.3s ease;
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:zoom-in;
+  box-shadow:0 6px 16px rgba(0,0,0,.15)
 }
-.product-gallery img:hover{
-transform: scale(1.05);
+
+/* ARTICLE */
+.article-grid{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+.article-card{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  background:#fff;
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+.article-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:12px;
+}
+.article-content{flex:2; min-width:250px}
+.article-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.share-article{
+  padding:8px 16px;
+  background:#3b5998;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:0.9rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.share-article:hover{
+  background:#2d4373;
+  transform: translateY(-2px);
 }
 
 /* LIGHTBOX */
 .lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999;
-opacity:0;
-transition: opacity 0.4s ease;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999
 }
-.lightbox img{max-width:92%;max-height:92%;border-radius:16px;transition: transform 0.3s ease;}
-.lightbox.active{display:flex;opacity:1}
+.lightbox img{max-width:92%;max-height:92%;border-radius:16px}
+.lightbox.active{display:flex}
 
 /* BUTTON */
 .btn{
-background:#25d366;
-color:#fff;
-padding:14px 28px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-transition: background 0.3s ease, transform 0.3s ease;
-}
-.btn:hover{
-background:#1ebe57;
-transform: translateY(-2px);
+  background:#25d366;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold
 }
 
 /* FOOTER */
 footer{
-background:#222;
-color:#aaa;
-text-align:center;
-padding:30px 20px
+  background:#222;
+  color:#aaa;
+  text-align:center;
+  padding:30px 20px
 }
 footer a{color:#25d366;text-decoration:none}
-footer a:hover{color:#1ebe57}
 
 /* FLOATING ACTIONS */
 .floating-actions{
-position:fixed;
-right:16px;
-bottom:16px;
-display:flex;
-flex-direction:column;
-gap:10px;
-z-index:999;
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
 }
 .share-group button{
-width:42px;
-height:42px;
-border-radius:50%;
-border:none;
-background:#333;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-transition: all 0.3s ease;
-}
-.share-group button:hover{
-background:#555;
-transform: scale(1.1);
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:none;
+  background:#333;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .share-group button svg{
-width:20px;
-height:20px;
-fill:#fff;
+  width:20px;
+  height:20px;
+  fill:#fff;
 }
 .wa-main{
-display:flex;
-align-items:center;
-justify-content:center;
-min-width:120px;
-padding:10px 14px;
-border-radius:8px;
-background:#25D366;
-color:#fff;
-font-weight:bold;
-text-decoration:none;
-font-size:14px;
-transition: background 0.3s ease, transform 0.3s ease;
-}
-.wa-main:hover{
-background:#1ebe57;
-transform: translateY(-2px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:120px;
+  padding:10px 14px;
+  border-radius:8px;
+  background:#25D366;
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.brand-title{font-size:2.2rem}
-.brand-sub{font-size:1.2rem}
-header{min-height:80vh;}
+  .brand-title{font-size:2.2rem}
+  .brand-sub{font-size:1.2rem}
+  .article-card{flex-direction:column;}
 }
 </style>
 </head>
 
 <body>
 
-<header id="header">
+<header>
   <div class="hero-content">
     <h1 class="brand-title">ONESTAMP Reborn</h1>
     <h2 class="brand-sub">Pusat Pembuatan Stempel & Percetakan</h2>
@@ -214,26 +223,86 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 <section>
 <h2>Layanan Kami</h2>
 <div class="services">
-<div class="card">🖋️ Pembuatan Stempel</div>
-<div class="card">🎨 Jasa Desain</div>
-<div class="card">🖨️ Percetakan</div>
+  <div class="card">🖋️ Pembuatan Stempel</div>
+  <div class="card">🎨 Jasa Desain</div>
+  <div class="card">🖨️ Percetakan</div>
 </div>
 </section>
 
 <section>
 <h2>Produk Kami</h2>
 <div class="product-gallery">
-<img src="images/stempel.jpg" alt="Stempel">
-<img src="images/stempel-logo.jpg" alt="Stempel Logo">
-<img src="images/kartu-nama.jpg" alt="Kartu Nama">
-<img src="images/banner.jpg" alt="Banner">
+  <img src="images/stempel.jpg" alt="Stempel">
+  <img src="images/stempel-logo.jpg" alt="Stempel Logo">
+  <img src="images/kartu-nama.jpg" alt="Kartu Nama">
+  <img src="images/banner.jpg" alt="Banner">
+</div>
+</section>
+
+<section>
+<h2>Artikel Terbaru</h2>
+<div class="article-grid">
+
+  <!-- Artikel 1 -->
+  <article class="article-card">
+    <div class="article-img" style="flex:1; min-width:200px;">
+      <img src="images/placeholder1.jpg" alt="Ilustrasi Artikel 1">
+    </div>
+    <div class="article-content">
+      <h3>Cara Mengajukan Stempel Baru atau Duplikat</h3>
+      <h4>Jika membuat ulang / Duplikat stempel</h4>
+      <ul>
+        <li>Kirim file foto hasil cap stempel, usahakan tegak lurus atau scan.</li>
+        <li>File bisa JPEG atau PDF.</li>
+        <li>Sertakan ukuran real stempel, bukan gagang, misal 4,3 cm.</li>
+        <li>Konfirmasi warna asli stempel.</li>
+        <li>Konfirmasi tulisan yang kurang jelas.</li>
+      </ul>
+      <h4>Jika Buat Baru</h4>
+      <ul>
+        <li>Kirim desain jika ada, format JPEG/PDF.</li>
+        <li>Jika masih konsep, bisa kirim coretan/tulisan tangan.</li>
+        <li>Untuk stempel berwarna >1 warna, jarak antar warna ~1,5 mm.</li>
+        <li>Tidak bisa warna gradasi.</li>
+        <li>Nanti kami bantu desain ulang stempelnya.</li>
+      </ul>
+      <div class="article-actions">
+        <a href="#" class="btn">Baca Selengkapnya</a>
+        <button class="share-article" data-url="#">Share FB</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Artikel 2 -->
+  <article class="article-card">
+    <div class="article-img" style="flex:1; min-width:200px;">
+      <img src="images/placeholder2.jpg" alt="Ilustrasi Artikel 3">
+    </div>
+    <div class="article-content">
+      <h3>Tips Merawat Stempel Agar Tahan Lama</h3>
+      <ul>
+        <li>Jangan menekan terlalu keras saat penggunaan.</li>
+        <li>Bersihkan stempel setelah digunakan, hindari tinta mengering terlalu lama.</li>
+		<li>Selalu pasang kembali tutup setelah digunakan.</li>
+        <li>Simpan stempel di tempat sejuk dan kering.</li>
+		<li>Hindari menyimpan stempel di dasbord mobil dalam waktu lama, atau tempat dengan resiko panas tinggi lainnya.</li>
+		<li>Pastikan selalu megisi ulang tinta sebelum benar benar habis atau kering untuk menghindari karet rusak atau retak.</li>
+		<li>Gunakan tinta yang sesuai, untuk Flashstamp jangan pernah gunakan tinta stempel PAD atau tinta permanen karena akan merusak karet stempel.</li>
+      </ul>
+      <div class="article-actions">
+        <a href="#" class="btn">Baca Selengkapnya</a>
+        <button class="share-article" data-url="#">Share FB</button>
+      </div>
+    </div>
+  </article>
+
 </div>
 </section>
 
 <section>
 <h2>Hubungi Kami</h2>
 <div style="text-align:center">
-<a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
+  <a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
 </div>
 </section>
 
@@ -255,7 +324,6 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
         l-0.443,2.89h-2.33v6.988C18.343,21.128,22,16.991,22,12z"/>
       </svg>
     </button>
-
     <!-- Twitter / X -->
     <button onclick="shareX()" aria-label="Share X/Twitter">
       <svg viewBox="0 0 24 24">
@@ -276,34 +344,27 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 </div>
 
 <script>
-// Lightbox
+// Lightbox produk
 const imgs=document.querySelectorAll('.product-gallery img');
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=document.getElementById('lightboxImg');
 imgs.forEach(img=>{img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}})
 lightbox.onclick=()=>lightbox.classList.remove('active');
 
-// Share
+// Share floating
 const text="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan";
 const url=window.location.href;
 function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`)}
 function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`)}
 
-// Fade-in on scroll
-const sections=document.querySelectorAll('section, .hero-content');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.style.opacity='1';
-entry.target.style.transform='translateY(0)';
-}})}, {threshold:0.2});
-sections.forEach(section=>observer.observe(section));
-
-// Parallax header
-const header=document.getElementById('header');
-window.addEventListener('scroll', ()=>{
-const scrolled=window.scrollY;
-header.style.backgroundPosition=`center calc(50% + ${scrolled * 0.2}px)`;
+// Share FB per artikel
+const shareButtons=document.querySelectorAll('.share-article');
+shareButtons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const link=btn.getAttribute('data-url');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, 
+                'fbShareWindow', 'height=450, width=550, top=100, left=100, toolbar=0, location=0, menubar=0, directories=0, scrollbars=1');
+  });
 });
 </script>
 
