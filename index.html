@@ -123,8 +123,50 @@ footer a{color:#25d366;text-decoration:none}
 .article-card{flex-direction:column}
 .article-card img{width:100%}
 }
+
+/* FLOATING WHATSAPP BUTTON */
+.floating-wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:999;
+}
+.floating-wa a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.floating-wa img{
+  width:26px;
+  height:26px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .floating-wa a span{
+    display:none;
+  }
+}
+
 </style>
 </head>
+
+<!-- FLOATING BUTTON PEMESANAN -->
+<div class="floating-wa">
+  <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20memesan%20stempel"
+     target="_blank"
+     aria-label="Pesan Stempel via WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>Pesan Stempel</span>
+  </a>
+</div>
 
 <body>
 
@@ -179,7 +221,7 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
     <h3>Tips Merawat Stempel Agar Tahan Lama</h3>
     <p>Tips penting agar stempel awet dan hasil cap tetap optimal.</p>
     <div class="article-actions">
-      <a href="artikel/tips-merawat.html" class="btn">Baca</a>
+      <a href="/artikel/tips-merawat-stempel.html" class="btn">Baca</a>
       <button class="share-btn">Share FB</button>
     </div>
   </div>
@@ -220,7 +262,3 @@ document.querySelectorAll('.share-btn').forEach(btn=>{
 
 </body>
 </html>
-
-
-
-
