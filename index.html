@@ -27,23 +27,23 @@ body{background:#f5f7fa;color:#333;line-height:1.6;scroll-behavior:smooth;overfl
 
 /* HEADER */
 header{
-position:relative;
-min-height:70vh;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-overflow:hidden;
+  position: relative;
+  min-height: 100vh; /* penuh layar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('images/header.jpg') center center/cover no-repeat;
+  overflow: hidden;
 }
 .hero-content{
-background:rgba(0,0,0,.55);
-padding:32px;
-border-radius:16px;
-max-width:760px;
-opacity:0;
-transform: translateY(30px);
-transition: all 0.8s ease;
+  background: rgba(0,0,0,.55);
+  padding: 40px 32px;
+  border-radius: 16px;
+  max-width: 760px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 .brand-title{font-size:3rem;font-weight:800;color:#fff;transition: transform 0.3s ease;}
 .brand-sub{font-size:1.4rem;color:#f1f1f1;}
@@ -187,6 +187,7 @@ transform: translateY(-2px);
 @media(max-width:768px){
 .brand-title{font-size:2.2rem}
 .brand-sub{font-size:1.2rem}
+header{min-height:80vh;}
 }
 </style>
 </head>
@@ -302,7 +303,7 @@ sections.forEach(section=>observer.observe(section));
 const header=document.getElementById('header');
 window.addEventListener('scroll', ()=>{
 const scrolled=window.scrollY;
-header.style.backgroundPosition=`center ${scrolled*0.4}px`;
+header.style.backgroundPosition=`center calc(50% + ${scrolled * 0.2}px)`;
 });
 </script>
 
