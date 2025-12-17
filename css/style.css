@@ -259,6 +259,42 @@ header{
 .share-btn:hover{
   opacity:.9;
 }
+/* =========================
+   ARTICLE LAYOUT (DESKTOP)
+========================= */
+.article{
+  display:flex;
+  gap:32px;
+  align-items:flex-start;
+}
+
+/* gambar di kiri */
+.article-img{
+  flex:0 0 38%;
+}
+
+.article-img img{
+  width:100%;
+  border-radius:14px;
+}
+
+/* konten di kanan */
+.article-content{
+  flex:1;
+}
+
+/* =========================
+   ARTICLE MOBILE
+========================= */
+@media(max-width:768px){
+  .article{
+    flex-direction:column;
+  }
+
+  .article-img{
+    width:100%;
+  }
+}
 
 /* =========================
    CTA
