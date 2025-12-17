@@ -23,30 +23,35 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
-body{background:#f5f7fa;color:#333;line-height:1.6}
+body{background:#f5f7fa;color:#333;line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;}
 
 /* HEADER */
 header{
+position:relative;
 min-height:70vh;
 background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center
+text-align:center;
+overflow:hidden;
 }
 .hero-content{
 background:rgba(0,0,0,.55);
 padding:32px;
 border-radius:16px;
-max-width:760px
+max-width:760px;
+opacity:0;
+transform: translateY(30px);
+transition: all 0.8s ease;
 }
-.brand-title{font-size:3rem;font-weight:800;color:#fff}
-.brand-sub{font-size:1.4rem;color:#f1f1f1}
-.brand-tagline{font-size:1.05rem;color:#ddd}
+.brand-title{font-size:3rem;font-weight:800;color:#fff;transition: transform 0.3s ease;}
+.brand-sub{font-size:1.4rem;color:#f1f1f1;}
+.brand-tagline{font-size:1.05rem;color:#ddd;}
 
 /* LAYOUT */
 .container{max-width:1100px;margin:auto;padding:40px 20px}
-section{margin-bottom:60px}
+section{margin-bottom:60px;opacity:0;transform: translateY(30px);transition: all 0.8s ease;}
 h2{text-align:center;margin-bottom:22px}
 
 /* SERVICES */
@@ -60,7 +65,13 @@ background:#fff;
 padding:24px;
 border-radius:14px;
 text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08)
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+cursor:pointer;
+transition: all 0.3s ease;
+}
+.card:hover{
+transform: translateY(-8px) scale(1.03);
+box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 /* PRODUCTS */
@@ -75,7 +86,11 @@ height:200px;
 object-fit:cover;
 border-radius:16px;
 cursor:zoom-in;
-box-shadow:0 6px 16px rgba(0,0,0,.15)
+box-shadow:0 6px 16px rgba(0,0,0,.15);
+transition: transform 0.3s ease;
+}
+.product-gallery img:hover{
+transform: scale(1.05);
 }
 
 /* LIGHTBOX */
@@ -86,10 +101,12 @@ background:rgba(0,0,0,.9);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:9999
+z-index:9999;
+opacity:0;
+transition: opacity 0.4s ease;
 }
-.lightbox img{max-width:92%;max-height:92%;border-radius:16px}
-.lightbox.active{display:flex}
+.lightbox img{max-width:92%;max-height:92%;border-radius:16px;transition: transform 0.3s ease;}
+.lightbox.active{display:flex;opacity:1}
 
 /* BUTTON */
 .btn{
@@ -98,7 +115,12 @@ color:#fff;
 padding:14px 28px;
 border-radius:8px;
 text-decoration:none;
-font-weight:bold
+font-weight:bold;
+transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn:hover{
+background:#1ebe57;
+transform: translateY(-2px);
 }
 
 /* FOOTER */
@@ -109,6 +131,7 @@ text-align:center;
 padding:30px 20px
 }
 footer a{color:#25d366;text-decoration:none}
+footer a:hover{color:#1ebe57}
 
 /* FLOATING ACTIONS */
 .floating-actions{
@@ -130,6 +153,11 @@ cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
+transition: all 0.3s ease;
+}
+.share-group button:hover{
+background:#555;
+transform: scale(1.1);
 }
 .share-group button svg{
 width:20px;
@@ -148,6 +176,11 @@ color:#fff;
 font-weight:bold;
 text-decoration:none;
 font-size:14px;
+transition: background 0.3s ease, transform 0.3s ease;
+}
+.wa-main:hover{
+background:#1ebe57;
+transform: translateY(-2px);
 }
 
 /* MOBILE */
@@ -160,7 +193,7 @@ font-size:14px;
 
 <body>
 
-<header>
+<header id="header">
   <div class="hero-content">
     <h1 class="brand-title">ONESTAMP Reborn</h1>
     <h2 class="brand-sub">Pusat Pembuatan Stempel & Percetakan</h2>
@@ -242,16 +275,35 @@ Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan ce
 </div>
 
 <script>
+// Lightbox
 const imgs=document.querySelectorAll('.product-gallery img');
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=document.getElementById('lightboxImg');
-imgs.forEach(img=>{img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}});
+imgs.forEach(img=>{img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}})
 lightbox.onclick=()=>lightbox.classList.remove('active');
 
+// Share
 const text="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan";
 const url=window.location.href;
 function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`)}
 function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`)}
+
+// Fade-in on scroll
+const sections=document.querySelectorAll('section, .hero-content');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity='1';
+entry.target.style.transform='translateY(0)';
+}})}, {threshold:0.2});
+sections.forEach(section=>observer.observe(section));
+
+// Parallax header
+const header=document.getElementById('header');
+window.addEventListener('scroll', ()=>{
+const scrolled=window.scrollY;
+header.style.backgroundPosition=`center ${scrolled*0.4}px`;
+});
 </script>
 
 </body>
