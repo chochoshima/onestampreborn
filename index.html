@@ -1,179 +1,154 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO BASIC -->
-  <meta name="description" content="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan. Cepat, rapi, bisa custom desain. Melayani stempel nama, logo, kartu nama, banner & percetakan.">
-  <meta name="keywords" content="stempel, pembuatan stempel, percetakan, stempel custom, stempel logo, cetak kartu nama, percetakan murah">
-  <meta name="author" content="ONESTAMP Reborn">
-  <meta name="robots" content="index, follow">
-  <!-- OPEN GRAPH / WHATSAPP -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ONESTAMP Reborn | Pusat Pembuatan Stempel & Percetakan">
-  <meta property="og:description" content="Cepat • Rapi • Bisa Custom Design. Stempel nama, logo, dan layanan percetakan terpercaya.">
-  <meta property="og:url" content="https://onestampreborn.pages.dev/">
-  <meta property="og:image" content="https://onestampreborn.pages.dev/images/preview.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <!-- TWITTER CARD -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ONESTAMP Reborn | Pusat Stempel & Percetakan">
-  <meta name="twitter:description" content="Cepat, rapi, bisa custom desain. Order mudah via WhatsApp.">
-  <meta name="twitter:image" content="https://onestampreborn.pages.dev/images/preview.jpg">
-  <title>ONESTAMP Reborn | Pusat Pembuatan Stempel & Percetakan</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #f5f7fa; color: #333; line-height: 1.6; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    header {
-      min-height: 70vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('images/header.jpg') center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+<!-- SEO BASIC -->
+<meta name="description" content="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan. Cepat, rapi, bisa custom desain.">
+<meta name="keywords" content="stempel, pembuatan stempel, percetakan, stempel custom, cetak kartu nama">
+<meta name="author" content="ONESTAMP Reborn">
+<meta name="robots" content="index, follow">
 
-    .hero-content {
-      background: rgba(0,0,0,0.55);
-      padding: 32px 36px;
-      border-radius: 16px;
-      max-width: 760px;
-    }
+<!-- OPEN GRAPH / WHATSAPP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ONESTAMP Reborn | Pusat Stempel & Percetakan">
+<meta property="og:description" content="Cepat • Rapi • Bisa Custom Design">
+<meta property="og:url" content="https://onestampreborn.pages.dev/">
+<meta property="og:image" content="https://onestampreborn.pages.dev/images/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-    .brand-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
-    }
+<title>ONESTAMP Reborn | Pusat Pembuatan Stempel & Percetakan</title>
 
-    .brand-sub {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #f1f1f1;
-      margin-bottom: 6px;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#f5f7fa;color:#333;line-height:1.6}
 
-    .brand-tagline {
-      font-size: 1.05rem;
-      color: #e0e0e0;
-    }
+/* HEADER */
+header{
+min-height:70vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/header.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center
+}
+.hero-content{
+background:rgba(0,0,0,.55);
+padding:32px;
+border-radius:16px;
+max-width:760px
+}
+.brand-title{font-size:3rem;font-weight:800;color:#fff}
+.brand-sub{font-size:1.4rem;color:#f1f1f1}
+.brand-tagline{font-size:1.05rem;color:#ddd}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+/* LAYOUT */
+.container{max-width:1100px;margin:auto;padding:40px 20px}
+section{margin-bottom:60px}
+h2{text-align:center;margin-bottom:22px}
 
-    section { margin-bottom: 60px; }
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px
+}
+.card{
+background:#fff;
+padding:24px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08)
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 22px;
-      text-align: center;
-    }
+/* PRODUCTS */
+.product-gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px
+}
+.product-gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:16px;
+cursor:zoom-in;
+box-shadow:0 6px 16px rgba(0,0,0,.15)
+}
 
-    .services, .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
+/* LIGHTBOX */
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999
+}
+.lightbox img{max-width:92%;max-height:92%;border-radius:16px}
+.lightbox.active{display:flex}
 
-    .card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+/* BUTTON */
+.btn{
+background:#25d366;
+color:#fff;
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold
+}
 
-    /* PRODUCT IMAGE ONLY */
-    .product-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+/* FOOTER */
+footer{
+background:#222;
+color:#aaa;
+text-align:center;
+padding:30px 20px
+}
+footer a{color:#25d366;text-decoration:none}
 
-    .product-gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 16px;
-      cursor: zoom-in;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
+/* FLOATING SHARE + WA */
+.floating-actions{
+position:fixed;
+right:16px;
+bottom:16px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:999
+}
+.share-group button{
+width:42px;height:42px;
+border-radius:50%;
+border:none;
+background:#333;
+color:#fff;
+font-size:12px;
+font-weight:bold;
+cursor:pointer
+}
+.wa-main{
+width:54px;height:54px;
+border-radius:50%;
+background:#25d366;
+color:#fff;
+font-size:22px;
+text-align:center;
+line-height:54px;
+text-decoration:none
+}
 
-    .product-gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .lightbox img {
-      max-width: 92%;
-      max-height: 92%;
-      border-radius: 16px;
-    }
-
-    .lightbox.active { display: flex; }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer a { color: #25d366; text-decoration: none; }
-
-    /* FLOATING WA */
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 999;
-    }
-
-    @media (max-width: 768px) {
-      .brand-title { font-size: 2.2rem; }
-      .brand-sub { font-size: 1.2rem; }
-      h2 { font-size: 1.6rem; }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+.brand-title{font-size:2.2rem}
+.brand-sub{font-size:1.2rem}
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -186,69 +161,76 @@
 
 <div class="container">
 
-  <section>
-    <h2>Tentang Kami</h2>
-    <p style="text-align:center; max-width:720px; margin:auto;">
-      Melayani pembuatan stempel, jasa desain, dan percetakan dengan proses cepat dan hasil berkualitas untuk kantor, UMKM, dan kebutuhan personal.
-    </p>
-  </section>
+<section>
+<h2>Tentang Kami</h2>
+<p style="text-align:center;max-width:720px;margin:auto">
+Melayani pembuatan stempel, jasa desain, dan percetakan dengan hasil rapi dan cepat.
+</p>
+</section>
 
-  <section>
-    <h2>Layanan Kami</h2>
-    <div class="services">
-      <div class="card">🖋️ Pembuatan Stempel</div>
-      <div class="card">🎨 Jasa Desain</div>
-      <div class="card">🖨️ Percetakan</div>
-    </div>
-  </section>
+<section>
+<h2>Layanan Kami</h2>
+<div class="services">
+<div class="card">🖋️ Pembuatan Stempel</div>
+<div class="card">🎨 Jasa Desain</div>
+<div class="card">🖨️ Percetakan</div>
+</div>
+</section>
 
-  <section>
-    <h2>Produk Kami</h2>
-    <div class="product-gallery">
-      <img src="images/stempel.jpg" alt="Stempel">
-      <img src="images/stempel-logo.jpg" alt="MMT, Brosur, Jasa Design">
-      <img src="images/kartu-nama.jpg" alt="Kartu Nama">
-      <img src="images/banner.jpg" alt="Banner">
-    </div>
-  </section>
+<section>
+<h2>Produk Kami</h2>
+<div class="product-gallery">
+<img src="images/stempel.jpg" alt="Stempel">
+<img src="images/stempel-logo.jpg" alt="Stempel Logo">
+<img src="images/kartu-nama.jpg" alt="Kartu Nama">
+<img src="images/banner.jpg" alt="Banner">
+</div>
+</section>
 
-  <section>
-    <h2>Hubungi Kami</h2>
-    <div style="text-align:center;">
-      <a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
-    </div>
-  </section>
+<section>
+<h2>Hubungi Kami</h2>
+<div style="text-align:center">
+<a class="btn" href="https://wa.me/6289670910156" target="_blank">Chat WhatsApp</a>
+</div>
+</section>
 
 </div>
 
 <footer>
-  <p>© 2025 ONESTAMP Reborn</p>
-  <p>WhatsApp: <a href="https://wa.me/6289670910156">0896-7091-0156</a></p>
+<p>© 2025 ONESTAMP Reborn</p>
+<p>WhatsApp: <a href="https://wa.me/6289670910156">0896-7091-0156</a></p>
 </footer>
 
-<a href="https://wa.me/6289670910156" class="wa-float" target="_blank">💬 WhatsApp</a>
+<!-- FLOATING SHARE -->
+<div class="floating-actions">
+<div class="share-group">
+<button onclick="shareWA()">WA</button>
+<button onclick="shareFB()">FB</button>
+<button onclick="shareX()">X</button>
+</div>
+<a href="https://wa.me/6289670910156" class="wa-main" target="_blank">💬</a>
+</div>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <img id="lightboxImg" alt="Zoom Produk" />
+<img id="lightboxImg" alt="Zoom Produk">
 </div>
 
 <script>
-  const imgs = document.querySelectorAll('.product-gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
+const imgs=document.querySelectorAll('.product-gallery img');
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+imgs.forEach(img=>{
+img.onclick=()=>{lightboxImg.src=img.src;lightbox.classList.add('active')}
+});
+lightbox.onclick=()=>lightbox.classList.remove('active');
 
-  imgs.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-    });
-  });
-
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
+const text="ONESTAMP Reborn – Pusat Pembuatan Stempel & Percetakan";
+const url=window.location.href;
+function shareWA(){window.open(`https://wa.me/?text=${encodeURIComponent(text+" "+url)}`)}
+function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`)}
+function shareX(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`)}
 </script>
 
 </body>
-
 </html>
