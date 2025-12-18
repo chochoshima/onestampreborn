@@ -181,15 +181,16 @@ header{
 
 .product-card {
   background: #fff;
-  border-radius: var(--radius);
+  border-radius: 14px;
   overflow: hidden;
   text-align: center;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
 }
 
 .product-card img {
@@ -197,14 +198,75 @@ header{
   aspect-ratio: 1/1;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
+  transition: transform .3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
 }
 
 .product-card span {
   display: block;
   padding: 12px 10px;
   font-weight: 600;
-  color: var(--text);
+  color: #1f2937;
   background: #fff;
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+.floating-wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:999;
+}
+
+.floating-wa a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:50px;
+  font-weight:700;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  text-decoration:none;
+  transition: transform .2s, box-shadow .2s;
+  animation: pulse 2s infinite;
+}
+
+.floating-wa a:hover{
+  transform:scale(1.1);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+}
+
+.floating-wa i{
+  font-size:1.4rem;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1)}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .product-gallery{
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;
+  }
+  .product-card span{
+    font-size:14px;
+    padding:8px 6px;
+  }
+  .floating-wa span{display:none}
 }
 
 /* =========================
