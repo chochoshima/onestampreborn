@@ -284,15 +284,63 @@ header {
   box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
-/* Tombol sekunder / kembali */
-.article .btn-secondary {
-  background: var(--primary);
+/* =========================
+   TOMBOL ARTIKEL - SERAGAMKAN
+========================= */
+.article .btn,
+.article .btn-primary,
+.article .share-btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  min-width: 180px;
+  transition: var(--transition);
+  margin: 5px 5px 5px 0; /* jarak antar tombol */
+}
+
+/* Warna tombol utama */
+.article .btn-primary,
+.article .btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #fff;
 }
 
-.article .btn-secondary:hover {
-  background: var(--secondary);
+/* Tombol hover */
+.article .btn-primary:hover,
+.article .btn:hover,
+.article .share-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Tombol sekunder / share */
+.article .share-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+/* Tombol sekunder hover */
+.article .share-btn:hover {
+  background: var(--secondary);
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .article .btn,
+  .article .btn-primary,
+  .article .share-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 0;
+    margin: 5px 0;
+  }
 }
 
 /* Responsive mobile */
