@@ -94,6 +94,11 @@ header {
     height: 40px; /* Logo lebih kecil di mobile */
   }
 }
+.logo-svg {
+  height: 50px;
+  width: auto;
+  display: block;
+}
 
 /* =========================
    HERO
