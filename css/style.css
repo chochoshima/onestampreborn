@@ -64,18 +64,23 @@ header {
 .menu a:hover::after { width: 100%; }
 .menu a:hover { color: var(--primary); }
 
-/* =========================
-   LOGO ANIMASI HOVER
-========================= */
 .logo-svg {
   height: 50px;
   width: auto;
   display: block;
-  transition: transform 0.3s ease; /* smooth hover */
+  transition: transform 0.3s, filter 0.3s; /* untuk hover */
+  animation: pulse 2s infinite ease-in-out;
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); } /* membesar 5% */
+}
+
+/* Hover */
 .logo-svg:hover {
-  transform: scale(1.1); /* membesar 10% saat hover */
+  transform: scale(1.15) rotate(-3deg); /* lebih besar & sedikit miring */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* efek shadow */
 }
 
 /* =========================
