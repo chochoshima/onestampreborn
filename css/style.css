@@ -75,6 +75,22 @@ header {
 .menu a:hover { color: var(--primary); }
 
 /* =========================
+   HEADER LOGO & NAV
+========================= */
+.nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* pastikan logo & menu sejajar vertikal */
+}
+
+/* Logo */
+.logo-svg {
+  height: 50px;  /* ubah sesuai tinggi yang diinginkan */
+  width: auto;   /* tetap proporsional */
+  display: block;
+}
+
+/* =========================
    HERO
 ========================= */
 .hero {
