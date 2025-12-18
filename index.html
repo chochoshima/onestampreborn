@@ -18,23 +18,21 @@
 
   <!-- HEADER -->
   <header>
-  <div class="nav container">
-    <div class="logo">
+    <div class="nav container">
       <div class="logo">
-      <a href="/">
-        <img src="images/logo.svg" alt="ONESTAMP Reborn" class="logo-svg">
-      </a>
+        <a href="/">
+          <img src="images/logo.svg" alt="ONESTAMP Reborn" class="logo-svg">
+        </a>
       </div>
-    <nav class="menu">
-      <a href="/">Beranda</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#produk">Produk</a>
-      <a href="#artikel">Artikel</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </div>
-</header>
-
+      <nav class="menu">
+        <a href="/">Beranda</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#produk">Produk</a>
+        <a href="#artikel">Artikel</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
   <section class="hero">
@@ -43,7 +41,7 @@
   </section>
 
   <!-- TENTANG -->
-  <section class="section">
+  <section class="section" id="tentang">
     <div class="container">
       <h2>Tentang ONESTAMP Reborn</h2>
       <p>
@@ -101,11 +99,13 @@
 
   <!-- CTA PESAN STAMPEL -->
   <section class="section cta">
-    <h2>Siap Pesan Stempel?</h2>
-    <p>Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
-    <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank" class="btn">
-      Pesan Sekarang
-    </a>
+    <div class="container">
+      <h2>Siap Pesan Stempel?</h2>
+      <p>Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
+      <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank" class="btn">
+        Pesan Sekarang
+      </a>
+    </div>
   </section>
 
   <!-- ARTIKEL -->
@@ -165,35 +165,31 @@
 
   <!-- JS LIGHTBOX ZOOM -->
   <script>
-  document.querySelectorAll('.product-card a.zoom').forEach(link => {
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-
-      const overlay = document.createElement('div');
-      overlay.classList.add('lightbox-overlay');
-
-      const img = document.createElement('img');
-      img.src = link.href;
-      overlay.appendChild(img);
-
-      const closeBtn = document.createElement('div');
-      closeBtn.classList.add('lightbox-close');
-      closeBtn.textContent = '✕';
-      document.body.appendChild(overlay);
-      document.body.appendChild(closeBtn);
-
-      overlay.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
-      closeBtn.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
-
-      document.addEventListener('keydown', function escClose(e){
-        if(e.key === "Escape"){
-          overlay.remove();
-          closeBtn.remove();
-          document.removeEventListener('keydown', escClose);
-        }
+    document.querySelectorAll('.product-card a.zoom').forEach(link => {
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        const overlay = document.createElement('div');
+        overlay.classList.add('lightbox-overlay');
+        const img = document.createElement('img');
+        img.src = link.href;
+        overlay.appendChild(img);
+        const closeBtn = document.createElement('div');
+        closeBtn.classList.add('lightbox-close');
+        closeBtn.textContent = '✕';
+        document.body.appendChild(overlay);
+        document.body.appendChild(closeBtn);
+        overlay.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
+        closeBtn.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
+        document.addEventListener('keydown', function escClose(e){
+          if(e.key === "Escape"){
+            overlay.remove();
+            closeBtn.remove();
+            document.removeEventListener('keydown', escClose);
+          }
+        });
       });
     });
-  });
   </script>
+
 </body>
 </html>
