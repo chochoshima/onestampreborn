@@ -272,3 +272,10 @@ header {
   .floating-wa span { display: none; }
   .btn { width: 100%; font-size: 14px; padding: 12px 0; }
 }
+
+footer {
+  background-color: #111827; /* langsung pakai hex */
+  color: #9ca3af;
+  padding: 50px 20px;
+}
+
