@@ -57,6 +57,10 @@ header {
   color: var(--primary);
 }
 
+.logo img {
+  height: 50px; /* sesuaikan tinggi logo */
+  width: auto;
+
 .menu a {
   margin-left: 22px;
   font-weight: 500;
