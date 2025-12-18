@@ -276,19 +276,37 @@ header{
 }
 
 /* =========================
-   CTA
+   CTA - PESAN STAMPEL
 ========================= */
-.cta{
-  text-align:center;
-  background:#eef2ff;
-  border-radius:24px;
-  padding:50px 20px;
+.cta {
+  text-align: center; /* pastikan container center */
+  background: #eef2ff;
+  border-radius: 24px;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* center horizontal & vertical */
+  gap: 16px; /* jarak antar elemen */
 }
 
-.cta .btn{
-  background:#2563eb;
-  color:#fff;
+.cta h2 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 700;
 }
+
+.cta p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 600px; /* agar teks tidak terlalu panjang */
+  margin: 0; /* hapus margin default */
+}
+
+.cta .btn {
+  margin-top: 10px;
+}
+
 
 /* =========================
    FOOTER
