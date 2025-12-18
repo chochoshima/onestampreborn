@@ -331,8 +331,43 @@ header {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
+/* =========================
+   ARTICLE SIDE-BY-SIDE
+========================= */
+.article-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 40px; /* jarak bawah artikel */
+}
+
+.article-side .article-img {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.article-side .article-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.article-side .article-content {
+  flex: 2 1 400px;
+}
+
 /* Responsif untuk layar kecil */
 @media(max-width:768px) {
+  .article-side {
+    flex-direction: column;
+  }
+  .article-side .article-img,
+  .article-side .article-content {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
   .order .btn,
   .article-actions .btn {
     width: 100%;
@@ -439,7 +474,7 @@ footer strong {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE GLOBAL
 ========================= */
 @media (max-width: 768px) {
   .menu { display: none; }
