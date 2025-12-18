@@ -53,10 +53,6 @@ header {
   padding: 0.75rem 1rem;
 }
 
-.logo img {
-  height: 80px; /* sesuaikan tinggi logo */
-  width: auto;
-
 /* Menu link */
 .menu a {
   margin-left: 1.5rem;
