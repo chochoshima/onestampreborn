@@ -13,23 +13,17 @@
   --transition: .25s ease;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* =========================
+   RESET & BODY
+========================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--light);
   color: var(--text);
   line-height: 1.65;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
 /* =========================
    HEADER
@@ -43,7 +37,6 @@ header {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
 .nav.container {
   display: flex;
   justify-content: space-between;
@@ -52,13 +45,11 @@ header {
   margin: 0 auto;
   padding: 0.75rem 1rem;
 }
-
-/* Menu link */
+.logo-svg { height: 50px; width: auto; display: block; }
 .menu a {
   margin-left: 1.5rem;
   position: relative;
   font-weight: 500;
-  color: var(--text);
   transition: color 0.3s;
 }
 .menu a::after {
@@ -67,28 +58,11 @@ header {
   width: 0;
   height: 2px;
   background: var(--primary);
-  left: 0;
-  bottom: -4px;
+  left: 0; bottom: -4px;
   transition: width 0.3s;
 }
 .menu a:hover::after { width: 100%; }
 .menu a:hover { color: var(--primary); }
-
-/* =========================
-   HEADER LOGO & NAV
-========================= */
-.nav.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* pastikan logo & menu sejajar vertikal */
-}
-
-/* Logo */
-.logo-svg {
-  height: 50px;  /* ubah sesuai tinggi yang diinginkan */
-  width: auto;   /* tetap proporsional */
-  display: block;
-}
 
 /* =========================
    HERO
@@ -108,19 +82,12 @@ header {
 .hero p { max-width: 640px; margin: 0 auto; font-size: 18px; opacity: 0.9; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
 
 /* =========================
-   SECTIONS
+   SECTIONS & SERVICES
 ========================= */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 70px 20px;
-}
+.section { max-width: 1100px; margin: auto; padding: 70px 20px; }
 .section h2 { font-size: 30px; margin-bottom: 16px; }
 .section p { max-width: 720px; color: var(--muted); }
 
-/* =========================
-   SERVICES
-========================= */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,7 +99,7 @@ header {
   padding: 26px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
   text-align: center;
 }
 .services .card:hover { transform: translateY(-6px); }
@@ -148,53 +115,151 @@ header {
   gap: 22px;
   margin-top: 32px;
 }
-.product-card { background: #fff; border-radius: var(--radius); overflow: hidden; text-align: center; box-shadow: var(--shadow); transition: transform .25s ease, box-shadow .25s ease; }
-.product-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,.12); }
-.product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; cursor: zoom-in; transition: transform .3s ease; }
+.product-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform .3s ease;
+}
 .product-card img:hover { transform: scale(1.05); }
 .product-card span { display: block; padding: 12px 10px; font-weight: 600; color: var(--text); background: #fff; }
 
 /* =========================
    CTA
 ========================= */
-.cta { text-align: center; background: #eef2ff; border-radius: 24px; padding: 50px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; }
-.cta h2 { font-size: 32px; font-weight: 700; margin: 0; }
-.cta p { font-size: 16px; color: var(--muted); max-width: 600px; margin: 0; }
-
-/* =========================
-   CONTAINER UTAMA
-========================= */
-.container {
-  max-width: 1100px;
+.cta {
+  text-align: center;
+  background: #eef2ff;
+  border-radius: 24px;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.cta-inner {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
 }
 
 /* =========================
-   FOOTER
+   BUTTONS GLOBAL
 ========================= */
-footer { background: var(--dark); color: #9ca3af; padding: 50px 20px; }
-.footer-inner { max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
-footer strong { color: #fff; }
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  text-align: center;
+  min-width: 180px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/* Tombol utama / CTA */
+.btn-primary, .btn-cta {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+}
+.btn-primary:hover, .btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Tombol sekunder */
+.btn-secondary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
 
 /* =========================
    FLOATING WHATSAPP
 ========================= */
-.floating-wa { position: fixed; right: 20px; bottom: 20px; z-index: 999; }
-.floating-wa a { display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 14px 20px; border-radius: 50px; font-weight: 700; box-shadow: 0 8px 25px rgba(0,0,0,.25); text-decoration: none; transition: transform .2s, box-shadow .2s; animation: pulse 2s infinite; }
-.floating-wa a:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(0,0,0,.35); }
+.floating-wa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+.floating-wa a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  animation: pulse 2s infinite;
+}
+.floating-wa a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0,0,0,.35);
+}
 .floating-wa i { font-size: 1.4rem; }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
 /* =========================
    LIGHTBOX ZOOM
 ========================= */
-.lightbox-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999; cursor: zoom-out; }
-.lightbox-overlay img { max-width: 90%; max-height: 90%; border-radius: var(--radius); box-shadow: 0 8px 25px rgba(0,0,0,.5); }
-.lightbox-close { position: fixed; top: 20px; right: 20px; font-size: 28px; color: #fff; font-weight: bold; cursor: pointer; z-index: 10000; }
+.lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px rgba(0,0,0,.5);
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
 
 /* =========================
-   RESPONSIVE GLOBAL
+   RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
   .menu { display: none; }
@@ -205,62 +270,5 @@ footer strong { color: #fff; }
   .product-gallery { grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:16px; }
   .product-card span { font-size: 14px; padding: 8px 6px; }
   .floating-wa span { display: none; }
-}
-
-/* =========================
-   CTA - TOMBOL PESAN
-========================= */
-.cta {
-  text-align: center;
-  background: #eef2ff;
-  border-radius: 24px;
-  padding: 50px 20px;
-}
-
-.cta-inner {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-}
-
-.cta h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.cta p {
-  font-size: 16px;
-  color: var(--muted);
-  margin: 0;
-}
-
-.btn-cta {
-  display: inline-block;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #fff;
-  padding: 14px 36px;
-  border-radius: 18px;
-  font-weight: 700;
-  font-size: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-cta:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .btn-cta {
-    width: 100%;
-    padding: 14px 0;
-    font-size: 16px;
-  }
+  .btn { width: 100%; font-size: 14px; padding: 12px 0; }
 }
