@@ -31,16 +31,16 @@ a {
   color: inherit;
 }
 
-/* =========================
-   HEADER STYLING
-========================= */
+/* HEADER MODERN */
 header {
-  width: 100%;
-  background-color: var(--light);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 999;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: background 0.3s;
 }
 
 .nav.container {
@@ -49,25 +49,62 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
-/* Logo SVG */
+/* Logo hover effect */
 .logo-svg {
   height: 50px;
   width: auto;
   display: block;
+  transition: transform 0.3s;
+}
+.logo-svg:hover {
+  transform: scale(1.1);
 }
 
-/* Menu link */
+/* Menu link with underline animation */
 .menu a {
   margin-left: 1.5rem;
+  position: relative;
   font-weight: 500;
+  color: var(--text);
   transition: color 0.3s;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
 }
 
 .menu a:hover {
   color: var(--primary);
+}
+
+/* Responsive: hamburger menu */
+@media(max-width:768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .menu.active {
+    display: flex;
+  }
 }
 
 /* =========================
