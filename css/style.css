@@ -65,6 +65,20 @@ header {
 .menu a:hover { color: var(--primary); }
 
 /* =========================
+   LOGO ANIMASI HOVER
+========================= */
+.logo-svg {
+  height: 50px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease; /* smooth hover */
+}
+
+.logo-svg:hover {
+  transform: scale(1.1); /* membesar 10% saat hover */
+}
+
+/* =========================
    HERO
 ========================= */
 .hero {
