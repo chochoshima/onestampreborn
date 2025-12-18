@@ -259,6 +259,52 @@ header {
 }
 
 /* =========================
+   TOMBOL ARTIKEL
+========================= */
+.article .btn,
+.article .btn-primary {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transition: var(--transition);
+  min-width: 180px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.article .btn:hover,
+.article .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Tombol sekunder / kembali */
+.article .btn-secondary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.article .btn-secondary:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .article .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
