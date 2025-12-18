@@ -6,6 +6,7 @@
 
   <title>Cara Pemesanan Duplikat atau Buat Stempel Baru | ONESTAMP Reborn</title>
   <meta name="description" content="Panduan lengkap cara membuat ulang atau membuat stempel baru di ONESTAMP Reborn.">
+  <meta name="keywords" content="stempel, duplikat stempel, stempel baru, ONESTAMP Reborn">
 
   <!-- OPEN GRAPH -->
   <meta property="og:type" content="article">
@@ -17,6 +18,87 @@
 
   <!-- GLOBAL STYLE -->
   <link rel="stylesheet" href="../css/style.css">
+  
+  <style>
+    /* LAYOUT ARTIKEL SIDE-BY-SIDE */
+    .article-side {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .article-side .article-img {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .article-side .article-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .article-side .article-content {
+      flex: 2 1 400px;
+    }
+
+    /* ORDER & ACTION BUTTONS */
+    .order .btn,
+    .article-actions .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 18px;
+      padding: 12px 28px;
+      transition: all 0.3s ease;
+    }
+
+    .order .btn {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .order .btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .article-actions .btn {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    }
+
+    .article-actions .btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .article-side {
+        flex-direction: column;
+      }
+      .article-side .article-img,
+      .article-side .article-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      .order .btn,
+      .article-actions .btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -25,12 +107,12 @@
 
       <!-- IMAGE -->
       <div class="article-img">
-        <img src="../images/dduplikat.jpg" alt="Cara Pemesanan Online">
+        <img src="../images/tips.jpg" alt="Tips Merawat Stempel Warna">
       </div>
 
       <!-- CONTENT -->
       <div class="article-content">
-        <h1>Cara Pemesanan Duplikat atau Membuat Stempel Baru</h1>
+        <h1>Cara Duplikat atau Buat Stempel Baru</h1>
 
         <h3>Jika Membuat Ulang / Duplikat Stempel</h3>
         <ul>
@@ -71,4 +153,3 @@
 
 </body>
 </html>
-
