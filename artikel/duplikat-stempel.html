@@ -72,9 +72,19 @@
 
     </article>
   </main>
-
+<script>
+function shareFB(){
+  const url = window.location.href;
+  window.open(
+    'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+    'fbshare',
+    'width=600,height=450'
+  );
+}
+</script>
 </body>
 </html>
+
 
 
 
