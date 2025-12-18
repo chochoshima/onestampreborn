@@ -45,7 +45,25 @@ header {
   margin: 0 auto;
   padding: 0.75rem 1rem;
 }
-.logo-svg { height: 50px; width: auto; display: block; }
+
+/* Logo */
+.logo-svg {
+  height: 50px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s, filter 0.3s;
+  animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.logo-svg:hover {
+  transform: scale(1.15) rotate(-3deg);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* Menu link */
 .menu a {
   margin-left: 1.5rem;
   position: relative;
@@ -63,28 +81,6 @@ header {
 }
 .menu a:hover::after { width: 100%; }
 .menu a:hover { color: var(--primary); }
-
-.logo-svg {
-  height: 50px;
-  width: auto;
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-  animation: pulse 2s infinite ease-in-out;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* shadow ringan awal */
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* Hover */
-.logo-svg:hover {
-  transform: scale(1.15) rotate(-3deg);
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
-  box-shadow: 0 0 12px rgba(34,197,94,0.5); /* efek glow hijau lembut */
-  animation-play-state: running; /* pulse tetap jalan */
-}
 
 /* =========================
    HERO
@@ -182,9 +178,15 @@ header {
 }
 
 /* =========================
-   BUTTONS GLOBAL
+   BUTTONS GLOBAL & ARTIKEL
 ========================= */
-.btn {
+.btn,
+.btn-primary,
+.btn-cta,
+.btn-secondary,
+.article .btn,
+.article .btn-primary,
+.article .share-btn {
   display: inline-block;
   font-weight: 700;
   font-size: 16px;
@@ -193,29 +195,32 @@ header {
   box-shadow: var(--shadow);
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
   min-width: 180px;
   transition: var(--transition);
-  cursor: pointer;
+  margin: 5px 5px 5px 0;
 }
 
-/* Tombol utama / CTA */
-.btn-primary, .btn-cta {
+/* Warna tombol utama */
+.btn-primary, .btn-cta,
+.article .btn-primary, .article .btn {
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #fff;
 }
-.btn-primary:hover, .btn-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
 
-/* Tombol sekunder */
-.btn-secondary {
+/* Tombol sekunder / share */
+.btn-secondary, .article .share-btn {
   background: var(--primary);
   color: #fff;
+  border: none;
 }
-.btn-secondary:hover {
-  background: var(--secondary);
+
+/* Hover tombol */
+.btn-primary:hover, .btn-cta:hover, .btn-secondary:hover,
+.article .btn-primary:hover, .article .btn:hover, .article .share-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  background-color: var(--secondary); /* hanya untuk sekunder */
 }
 
 /* =========================
@@ -246,7 +251,6 @@ header {
   box-shadow: 0 12px 35px rgba(0,0,0,.35);
 }
 .floating-wa i { font-size: 1.4rem; }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
 /* =========================
    LIGHTBOX ZOOM
@@ -281,100 +285,6 @@ header {
 }
 
 /* =========================
-   TOMBOL ARTIKEL
-========================= */
-.article .btn,
-.article .btn-primary {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 12px 32px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  transition: var(--transition);
-  min-width: 180px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.article .btn:hover,
-.article .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-/* =========================
-   TOMBOL ARTIKEL - SERAGAMKAN
-========================= */
-.article .btn,
-.article .btn-primary,
-.article .share-btn {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 12px 32px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  min-width: 180px;
-  transition: var(--transition);
-  margin: 5px 5px 5px 0; /* jarak antar tombol */
-}
-
-/* Warna tombol utama */
-.article .btn-primary,
-.article .btn {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #fff;
-}
-
-/* Tombol hover */
-.article .btn-primary:hover,
-.article .btn:hover,
-.article .share-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-/* Tombol sekunder / share */
-.article .share-btn {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-}
-
-/* Tombol sekunder hover */
-.article .share-btn:hover {
-  background: var(--secondary);
-}
-
-/* Responsive mobile */
-@media (max-width: 768px) {
-  .article .btn,
-  .article .btn-primary,
-  .article .share-btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px 0;
-    margin: 5px 0;
-  }
-}
-
-/* Responsive mobile */
-@media (max-width: 768px) {
-  .article .btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px 0;
-  }
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
@@ -386,12 +296,22 @@ header {
   .product-gallery { grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:16px; }
   .product-card span { font-size: 14px; padding: 8px 6px; }
   .floating-wa span { display: none; }
-  .btn { width: 100%; font-size: 14px; padding: 12px 0; }
+  .btn,
+  .article .btn,
+  .article .btn-primary,
+  .article .share-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 0;
+    margin: 5px 0;
+  }
 }
 
+/* =========================
+   FOOTER
+========================= */
 footer {
-  background-color: #111827; /* langsung pakai hex */
+  background-color: var(--dark);
   color: #9ca3af;
   padding: 50px 20px;
 }
-
