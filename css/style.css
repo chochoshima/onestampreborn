@@ -36,7 +36,7 @@ a {
 ========================= */
 header {
   width: 100%;
-  background-color: var(--light, #f8f9fb);
+  background-color: var(--light);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
@@ -54,7 +54,7 @@ header {
 
 /* Logo SVG */
 .logo-svg {
-  height: 50px;  /* Atur tinggi logo desktop */
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -62,42 +62,12 @@ header {
 /* Menu link */
 .menu a {
   margin-left: 1.5rem;
-  text-decoration: none;
-  color: var(--text, #1f2937);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .menu a:hover {
-  color: var(--primary, #2563eb);
-}
-
-/* Responsive untuk layar kecil */
-@media (max-width: 768px) {
-  .nav.container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu a {
-    margin: 0.5rem 0;
-  }
-
-  .logo-svg {
-    height: 40px; /* Logo lebih kecil di mobile */
-  }
-}
-.logo-svg {
-  height: 50px;
-  width: auto;
-  display: block;
+  color: var(--primary);
 }
 
 /* =========================
@@ -105,9 +75,7 @@ header {
 ========================= */
 .hero {
   position: relative;
-  background-image:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("../images/hero.jpg");
+  background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("../images/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -186,11 +154,6 @@ header {
   transform: translateY(-6px);
 }
 
-.service-icon {
-  font-size: 42px;
-  margin-bottom: 14px;
-}
-
 .services .card h3 {
   font-size: 18px;
   margin-bottom: 8px;
@@ -242,7 +205,7 @@ header {
   display: block;
   padding: 12px 10px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text);
   background: #fff;
 }
 
@@ -272,10 +235,6 @@ header {
   color: var(--muted);
   max-width: 600px;
   margin: 0;
-}
-
-.cta .btn {
-  margin-top: 10px;
 }
 
 /* =========================
@@ -446,7 +405,7 @@ footer strong {
 /* =========================
    RESPONSIVE
 ========================= */
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .menu { display: none; }
   .hero { padding: 80px 20px; }
   .hero h1 { font-size: 28px; }
@@ -454,7 +413,7 @@ footer strong {
   .section h2 { font-size: 24px; }
   .article { flex-direction: column; padding: 26px; }
   .article-img { width: 100%; }
-  .product-gallery { grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+  .product-gallery { grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:16px; }
   .product-card span { font-size: 14px; padding: 8px 6px; }
   .floating-wa span { display: none; }
 }
