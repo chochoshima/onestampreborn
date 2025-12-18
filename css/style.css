@@ -288,71 +288,43 @@ header {
 }
 
 /* =========================
-   ARTICLE
+   TOMBOL ARTIKEL
 ========================= */
-.article {
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  background: #fff;
-  padding: 36px;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  margin-bottom: 40px;
-}
-
-.article-img {
-  flex: 0 0 38%;
-}
-
-.article-img img {
-  width: 100%;
-  border-radius: var(--radius);
-}
-
-.article-content {
-  flex: 1;
-}
-
-.article-content h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.article-content h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
-
-.article-content ul {
-  padding-left: 18px;
-  margin-bottom: 16px;
-}
-
-.article-content li {
-  margin-bottom: 8px;
-}
-
-.article-actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-
-.share-btn {
-  background: #1877f2;
+.order .btn {
+  display: inline-block;
+  background: var(--secondary); /* hijau */
   color: #fff;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  cursor: pointer;
+  padding: 14px 30px;
+  border-radius: 12px;
   font-weight: 600;
-  transition: var(--transition);
+  font-size: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.share-btn:hover {
-  opacity: .9;
+.order .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Tombol kembali ke beranda */
+.article-actions .btn {
+  display: inline-block;
+  background: var(--primary); /* biru */
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.article-actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* =========================
