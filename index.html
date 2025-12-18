@@ -4,75 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
   <title>ONESTAMP Reborn | Stempel & Percetakan Profesional</title>
   <meta name="description" content="ONESTAMP Reborn – Pusat pembuatan stempel dan percetakan cepat, rapi, dan custom untuk kantor, UMKM, dan instansi.">
 
-  <!-- CANONICAL -->
-  <link rel="canonical" href="https://onestampreborn.pages.dev/">
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="ONESTAMP Reborn">
-  <meta property="og:title" content="ONESTAMP Reborn | Stempel & Percetakan Profesional">
-  <meta property="og:description" content="Cepat • Rapi • Bisa Custom • Harga Bersahabat">
-  <meta property="og:image" content="https://onestampreborn.pages.dev/images/cover.jpg">
-  <meta property="og:url" content="https://onestampreborn.pages.dev/">
-
-  <!-- FONT -->
+  <!-- FONT & ICON -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- ICON -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
-  <!-- GLOBAL STYLE -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-
-<script>
-document.querySelectorAll('.product-card a.zoom').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-
-    // buat overlay
-    const overlay = document.createElement('div');
-    overlay.classList.add('lightbox-overlay');
-
-    // gambar zoom
-    const img = document.createElement('img');
-    img.src = link.href;
-    overlay.appendChild(img);
-
-    // tombol close
-    const closeBtn = document.createElement('div');
-    closeBtn.classList.add('lightbox-close');
-    closeBtn.textContent = '✕';
-    document.body.appendChild(overlay);
-    document.body.appendChild(closeBtn);
-
-    // tutup klik overlay atau tombol
-    overlay.addEventListener('click', () => {
-      overlay.remove();
-      closeBtn.remove();
-    });
-
-    closeBtn.addEventListener('click', () => {
-      overlay.remove();
-      closeBtn.remove();
-    });
-
-    // tutup dengan ESC
-    document.addEventListener('keydown', function escClose(e){
-      if(e.key === "Escape"){
-        overlay.remove();
-        closeBtn.remove();
-        document.removeEventListener('keydown', escClose);
-      }
-    });
-  });
-});
-</script>
-
 <body>
 
   <!-- HEADER -->
@@ -93,9 +34,12 @@ document.querySelectorAll('.product-card a.zoom').forEach(link => {
   <section class="hero">
     <h1>Stempel & Percetakan Profesional</h1>
     <p>Cepat • Rapi • Bisa Custom Desain • Harga Bersahabat</p>
+    <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank" class="btn">
+      Pesan via WhatsApp
+    </a>
   </section>
 
-  <!-- ABOUT -->
+  <!-- TENTANG -->
   <section class="section">
     <div class="container">
       <h2>Tentang ONESTAMP Reborn</h2>
@@ -107,7 +51,7 @@ document.querySelectorAll('.product-card a.zoom').forEach(link => {
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- LAYANAN -->
   <section class="section" id="layanan">
     <div class="container">
       <h2>Layanan Kami</h2>
@@ -121,44 +65,45 @@ document.querySelectorAll('.product-card a.zoom').forEach(link => {
 
   <!-- PRODUK -->
   <section class="section" id="produk">
-  <div class="container">
-    <h2>Produk Kami</h2>
-    <div class="product-gallery">
-      <div class="product-card">
-        <a href="images/stempel.jpg" class="zoom">
-          <img src="images/stempel.jpg" alt="Stempel">
-        </a>
-        <span>Stempel</span>
-      </div>
-      <div class="product-card">
-        <a href="images/stempel-logo.jpg" class="zoom">
-          <img src="images/stempel-logo.jpg" alt="Stempel Logo">
-        </a>
-        <span>Nota-Stiker-Brosur-Jasa Design</span>
-      </div>
-      <div class="product-card">
-        <a href="images/kartu-nama.jpg" class="zoom">
-          <img src="images/kartu-nama.jpg" alt="Kartu Nama">
-        </a>
-        <span>Kartu Nama</span>
-      </div>
-      <div class="product-card">
-        <a href="images/banner.jpg" class="zoom">
-          <img src="images/banner.jpg" alt="Banner">
-        </a>
-        <span>Banner</span>
+    <div class="container">
+      <h2>Produk Kami</h2>
+      <div class="product-gallery">
+        <div class="product-card">
+          <a href="images/stempel.jpg" class="zoom">
+            <img src="images/stempel.jpg" alt="Stempel">
+          </a>
+          <span>Stempel</span>
+        </div>
+        <div class="product-card">
+          <a href="images/stempel-logo.jpg" class="zoom">
+            <img src="images/stempel-logo.jpg" alt="Stempel Logo">
+          </a>
+          <span>Nota-Stiker-Brosur-Jasa Design</span>
+        </div>
+        <div class="product-card">
+          <a href="images/kartu-nama.jpg" class="zoom">
+            <img src="images/kartu-nama.jpg" alt="Kartu Nama">
+          </a>
+          <span>Kartu Nama</span>
+        </div>
+        <div class="product-card">
+          <a href="images/banner.jpg" class="zoom">
+            <img src="images/banner.jpg" alt="Banner">
+          </a>
+          <span>Banner</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FLOATING WHATSAPP -->
-<div class="floating-wa">
-  <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    <span>Pesan Sekarang</span>
-  </a>
-</div>
+  <!-- CTA PESAN STAMPEL -->
+  <section class="section cta">
+    <h2>Siap Pesan Stempel?</h2>
+    <p>Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
+    <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank" class="btn">
+      Pesan Sekarang
+    </a>
+  </section>
 
   <!-- ARTIKEL -->
   <section class="section" id="artikel">
@@ -176,17 +121,6 @@ document.querySelectorAll('.product-card a.zoom').forEach(link => {
           <a href="/artikel/tips-merawat.html" class="link">Baca selengkapnya →</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta">
-    <div class="container">
-      <h2>Siap Pesan Stempel?</h2>
-      <p>Hubungi kami sekarang untuk konsultasi dan pemesanan.</p>
-      <a href="https://wa.me/6289670910156?text=Halo%20ONESTAMP%20Reborn,%20saya%20ingin%20pesan%20stempel" target="_blank" class="btn">
-        Pesan Sekarang
-      </a>
     </div>
   </section>
 
@@ -226,5 +160,37 @@ document.querySelectorAll('.product-card a.zoom').forEach(link => {
     </a>
   </div>
 
+  <!-- JS LIGHTBOX ZOOM -->
+  <script>
+  document.querySelectorAll('.product-card a.zoom').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+
+      const overlay = document.createElement('div');
+      overlay.classList.add('lightbox-overlay');
+
+      const img = document.createElement('img');
+      img.src = link.href;
+      overlay.appendChild(img);
+
+      const closeBtn = document.createElement('div');
+      closeBtn.classList.add('lightbox-close');
+      closeBtn.textContent = '✕';
+      document.body.appendChild(overlay);
+      document.body.appendChild(closeBtn);
+
+      overlay.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
+      closeBtn.addEventListener('click', () => { overlay.remove(); closeBtn.remove(); });
+
+      document.addEventListener('keydown', function escClose(e){
+        if(e.key === "Escape"){
+          overlay.remove();
+          closeBtn.remove();
+          document.removeEventListener('keydown', escClose);
+        }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
