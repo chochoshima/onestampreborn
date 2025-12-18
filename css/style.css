@@ -357,6 +357,22 @@ header {
   flex: 2 1 400px;
 }
 
+/* CONTAINER UTAMA */
+.container {
+  max-width: 1100px; /* atau sesuai kebutuhan */
+  margin: 0 auto;    /* membuat kontainer berada di tengah */
+  padding: 20px;     /* beri jarak dari sisi layar */
+}
+
+/* ARTICLE SIDE-BY-SIDE */
+.article-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 40px; /* jarak bawah artikel */
+}
+
 /* Responsif untuk layar kecil */
 @media(max-width:768px) {
   .article-side {
