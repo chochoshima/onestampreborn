@@ -29,35 +29,46 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-  <script>
+<script>
 document.querySelectorAll('.product-card a.zoom').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
 
+    // buat overlay
     const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0,0,0,0.8)';
-    overlay.style.display = 'flex';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-    overlay.style.cursor = 'zoom-out';
-    overlay.style.zIndex = 9999;
+    overlay.classList.add('lightbox-overlay');
 
+    // gambar zoom
     const img = document.createElement('img');
     img.src = link.href;
-    img.style.maxWidth = '90%';
-    img.style.maxHeight = '90%';
-    img.style.borderRadius = '14px';
-    img.style.boxShadow = '0 8px 25px rgba(0,0,0,.5)';
     overlay.appendChild(img);
 
+    // tombol close
+    const closeBtn = document.createElement('div');
+    closeBtn.classList.add('lightbox-close');
+    closeBtn.textContent = '✕';
     document.body.appendChild(overlay);
+    document.body.appendChild(closeBtn);
 
-    overlay.addEventListener('click', () => overlay.remove());
+    // tutup klik overlay atau tombol
+    overlay.addEventListener('click', () => {
+      overlay.remove();
+      closeBtn.remove();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.remove();
+      closeBtn.remove();
+    });
+
+    // tutup dengan ESC
+    document.addEventListener('keydown', function escClose(e){
+      if(e.key === "Escape"){
+        overlay.remove();
+        closeBtn.remove();
+        document.removeEventListener('keydown', escClose);
+      }
+    });
   });
 });
 </script>
