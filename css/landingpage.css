@@ -3,9 +3,9 @@
 =============================== */
 :root {
     --primary: #2563eb;
+    --accent: #3b82f6;
     --dark: #0f172a;
     --light: #f8fafc;
-    --accent: #3b82f6;
     --text-muted: #64748b;
     --white: #ffffff;
     --shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -33,19 +33,16 @@ body {
 }
 
 /* ===============================
-   HERO SECTION CLEAN
+   HERO SECTION
 =============================== */
 .hero {
-    padding: 120px 0 100px;
-    background: radial-gradient(circle at top right, #e0e7ff, transparent);
-}
-
-.hero-grid {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    flex-wrap: wrap; /* responsive, gambar turun di layar kecil */
+    padding: 120px 0;
+    background: radial-gradient(circle at top right, #e0e7ff, transparent);
+    flex-wrap: wrap;
 }
 
 .hero-content {
@@ -79,10 +76,10 @@ body {
 .hero-image img {
     width: 100%;
     height: auto;
-    object-fit: contain;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     display: block;
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 
@@ -90,21 +87,48 @@ body {
     transform: scale(1.02);
 }
 
-/* RESPONSIVE HERO */
-@media (max-width: 992px) {
-    .hero-grid {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-image {
-        margin-top: 30px;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.25s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    box-shadow: 0 12px 25px rgba(37,99,235,0.35);
+}
+
+.btn-outline {
+    border: 2px solid #e2e8f0;
+    color: var(--dark);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }
 
 /* ===============================
@@ -155,25 +179,63 @@ body {
     margin-bottom: 15px;
 }
 
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
 /* ===============================
    CTA SECTION
 =============================== */
-.text-center {
+.cta-section {
+    background: #e0e7ff;
+    padding: 80px 0;
+    border-radius: var(--radius);
     text-align: center;
+    box-shadow: var(--shadow);
 }
 
-.text-center h2 {
+.cta-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--dark);
 }
 
-.text-center p {
+.cta-section p {
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 12px 25px rgba(37,99,235,0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background: var(--accent);
+    box-shadow: 0 15px 30px rgba(37,99,235,0.35);
+    transform: translateY(-3px);
 }
 
 /* ===============================
-   LOKASI / MAP
+   MAP / LOKASI
 =============================== */
 .map-container iframe {
     width: 100%;
@@ -233,8 +295,14 @@ body {
     .hero-btns {
         justify-content: center;
     }
-    .hero-image img {
+    .hero-image {
         margin-top: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
     }
 }
 
@@ -247,5 +315,15 @@ body {
     }
     .hero h1 {
         font-size: 2rem;
+    }
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    .cta-section p {
+        font-size: 1rem;
+    }
+    .cta-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 }
