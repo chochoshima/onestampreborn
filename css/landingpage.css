@@ -35,13 +35,68 @@ body {
 /* ===============================
    HERO SECTION (Flexbox)
 =============================== */
+/* ===============================
+   HERO SECTION FIX
+=============================== */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
     padding: 120px 0;
+    flex-wrap: wrap; /* biar responsif */
     background: radial-gradient(circle at top right, #e0e7ff, transparent);
+}
+
+.hero-content {
+    flex: 1 1 500px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: block;
+    object-fit: cover;
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        margin-top: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }
 
 .hero-content {
@@ -257,3 +312,4 @@ body {
         font-size: 2rem;
     }
 }
+
