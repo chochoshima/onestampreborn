@@ -1,6 +1,6 @@
-/* ===============================
-   GLOBAL VARIABLES & RESET
-=============================== */
+/* ============================================================
+   1. GLOBAL VARIABLES, RESET & BASE
+============================================================ */
 :root {
     --primary: #2563eb;
     --dark: #0f172a;
@@ -31,9 +31,9 @@ body {
     padding: 0 2rem;
 }
 
-/* ===============================
-   HEADER & NAV
-=============================== */
+/* ============================================================
+   2. HEADER & NAVIGATION
+============================================================ */
 header {
     min-height: 80px;
     padding: 1.5rem 0;
@@ -87,7 +87,7 @@ header {
     display: inline-block;
     animation: pulseLogo 2s infinite;
     transform-origin: center;
-	aspect-ratio: 1/1;
+    aspect-ratio: 1/1;
 }
 
 .menu {
@@ -143,9 +143,9 @@ header {
 
 .menu.active { display: block; }
 
-/* ===============================
-   HERO SECTION
-=============================== */
+/* ============================================================
+   3. HERO SECTION
+============================================================ */
 .hero {
     padding: 120px 0 100px;
     background: radial-gradient(circle at top right, #e0e7ff, transparent);
@@ -208,21 +208,21 @@ header {
 }
 .hero-image img:hover { transform: scale(1.02); }
 
-/* ===============================
-   SERVICES & PRODUCTS
-=============================== */
+/* ============================================================
+   4. SERVICES SECTION
+============================================================ */
 .section { padding: 100px 0; }
 .bg-light { background: var(--light); }
 
 .section-header { text-align: center; margin-bottom: 60px; }
 .section-header h2 { font-size: 2.5rem; }
 
-.services-grid, .product-gallery {
+.services-grid { 
     display: grid;
     gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
 }
 
-.services-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .service-card {
     background: white;
     padding: 30px 25px;
@@ -232,6 +232,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -250,30 +251,7 @@ header {
     color: var(--text-muted);
     margin-bottom: 20px;
     line-height: 1.5;
-}
-
-.card-footer {
-    font-size: 0.85rem;
-    color: #94a3b8; /* muted text */
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.link-artikel.btn-article {
-    display: inline-block;
-    text-decoration: none;
-    background: var(--primary);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.link-artikel.btn-article:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
+    flex-grow: 1; /* Pendorong footer sejajar */
 }
 
 .icon-box {
@@ -289,25 +267,68 @@ header {
     margin-bottom: 20px;
 }
 
-.product-gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-/* Styling Kartu Produk dengan Bayangan Halus */
+.card-footer {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.link-artikel.btn-article {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: fit-content;
+}
+
+.link-artikel.btn-article:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.link-artikel.btn-article i { transition: transform 0.3s ease; }
+.link-artikel.btn-article:hover i { transform: translateX(3px); }
+
+/* ============================================================
+   5. PRODUCTS SECTION
+============================================================ */
+.product-gallery { 
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+
 .product-card {
     background: var(--white);
     border-radius: 20px;
-    overflow: hidden; /* Pastikan gambar tidak keluar dari border radius */
+    overflow: hidden;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.03); /* Border tipis agar terlihat rapi */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan awal yang sangat halus */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animasi smooth */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Efek saat Kartu Disentuh (Hover) */
 .product-card:hover {
-    transform: translateY(-10px); /* Kartu naik sedikit */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Bayangan jadi lebih tebal dan luas */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Efek pada Gambar di Dalam Kartu */
 .product-card img {
     width: 100%;
     height: auto;
@@ -315,26 +336,20 @@ header {
     transition: transform 0.6s ease;
 }
 
-.product-card:hover img {
-    transform: scale(1.08); /* Gambar sedikit nge-zoom */
-}
+.product-card:hover img { transform: scale(1.08); }
 
-/* Tambahan: Overlay halus pada gambar saat hover */
 .product-card .zoom::after {
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(37, 99, 235, 0.05); /* Warna biru brand tipis banget */
+    background: rgba(37, 99, 235, 0.05);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.product-card:hover .zoom::after {
-    opacity: 1;
-}
+.product-card:hover .zoom::after { opacity: 1; }
 
-/* Styling Teks Info Produk di bawah Gambar */
 .product-info {
     padding: 20px;
     background: var(--white);
@@ -345,9 +360,9 @@ header {
     position: relative;
 }
 
-/* ===============================
-   CONTACT & MAP
-=============================== */
+/* ============================================================
+   6. CONTACT & MAP
+============================================================ */
 .contact-card {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -384,9 +399,9 @@ header {
     border: 0;
 }
 
-/* ===============================
-   FOOTER
-=============================== */
+/* ============================================================
+   7. FOOTER SECTION
+============================================================ */
 .site-footer {
     background: var(--dark);
     color: #cbd5e1;
@@ -434,186 +449,140 @@ header {
     box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* ===============================
-   ANIMATIONS
-=============================== */
+/* ============================================================
+   8. FLOATING ELEMENTS (WA & VISITOR)
+============================================================ */
+.visitor-card {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    z-index: 9998;
+    backdrop-filter: blur(6px);
+    transform: none;
+}
+
+.visitor-card div { text-align: left; min-width: auto; }
+
+.floating-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    transition: all 0.3s ease;
+    animation: waPulse 2s infinite, fadeInUp 0.8s ease-out;
+}
+
+.floating-wa:hover {
+    background-color: #128c7e;
+    animation: none;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* ============================================================
+   9. ANIMATIONS (KEYFRAMES)
+============================================================ */
 @keyframes pulseLogo {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
-/* ===============================
-   RESPONSIVE
-=============================== */
+@keyframes waPulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================================
+   10. RESPONSIVE DESIGN (MEDIA QUERIES)
+============================================================ */
+
+/* 📱 TABLET & SMALL DESKTOP */
 @media (max-width: 768px) {
     .hero-grid, .contact-card { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content p { font-size: 1rem; }
-    .menu { display: none; flex-direction: column; gap: 1rem; background: var(--light); position: absolute; top: 100%; right: 0; width: 200px; padding: 1rem; border-radius: 8px; box-shadow: var(--shadow); z-index: 999; }
+    
+    .menu { 
+        display: none; 
+        flex-direction: column; 
+        gap: 1rem; 
+        background: var(--light); 
+        position: absolute; 
+        top: 100%; 
+        right: 0; 
+        width: 200px; 
+        padding: 1rem; 
+        border-radius: 8px; 
+        box-shadow: var(--shadow); 
+        z-index: 999; 
+    }
     .hamburger { display: block; }
     .menu li a { font-size: 1rem; }
+    
     .footer-local-cta { text-align: center; padding: 50px 20px; }
     .footer-local-cta h3 { font-size: 1.6rem; }
     .contact-info { padding: 30px; }
-}
-.visitor-card {
-  position: fixed;
-  left: 20px; /* Pindahkan ke KIRI agar tidak tabrakan dengan WA di KANAN */
-  bottom: 20px;
-  transform: none; /* Hapus translateX(-50%) */
-  display: flex;
-  flex-direction: column; /* Ubah jadi vertikal agar lebih hemat ruang di kiri */
-  gap: 5px;
-  background: rgba(15, 23, 42, 0.9);
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  font-family: "Plus Jakarta Sans", sans-serif;
-  z-index: 9998; /* Di bawah WA sedikit */
-  backdrop-filter: blur(6px);
+
+    .floating-wa {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+        border-radius: 50%;
+    }
+    .floating-wa span { display: none; }
+    .floating-wa i { font-size: 28px; }
+
+    .visitor-card {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 12px;
+    }
+    .visitor-card strong { font-size: 16px; }
 }
 
-.visitor-card div {
-  text-align: left; /* Rata kiri */
-  min-width: auto;
-}
-
-/* 📱 MOBILE */
+/* 📱 MOBILE SPECIFIC */
 @media (max-width: 480px) {
-  .visitor-card {
-    bottom: 14px;
-    padding: 12px 16px;
-    gap: 14px;
-  }
-  .visitor-card strong {
-    font-size: 18px;
-  }
-}
-/* Styling Tombol WA Melayang */
-.floating-wa {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: all 0.3s ease;
-}
-
-.floating-wa i {
-  font-size: 24px;
-}
-
-.floating-wa span {
-  display: inline-block; /* Muncul di desktop */
-}
-
-.floating-wa:hover {
-  background-color: #128c7e;
-  transform: translateY(-5px);
-  color: #fff;
-}
-
-/* Optimasi untuk tampilan HP */
-@media (max-width: 768px) {
-  .floating-wa {
-    bottom: 15px;
-    right: 15px;
-    padding: 10px;
-    border-radius: 50%; /* Jadi bulat di HP agar tidak makan tempat */
-  }
-  .floating-wa span {
-    display: none; /* Sembunyikan tulisan di HP agar tidak menutupi konten */
-  }
-  .floating-wa i {
-    font-size: 28px;
-    margin: 2px;
-  }
-}
-
-/* Animasi Muncul Halus untuk Elemen Melayang */
-.floating-wa, .visitor-card {
-    animation: fadeInUp 0.8s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .visitor-card {
+        bottom: 14px;
+        padding: 12px 16px;
+        gap: 14px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .visitor-card strong { font-size: 18px; }
 }
 
-/* Styling Tombol Artikel agar Lebih Modern */
-.link-artikel.btn-article {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: fit-content;
-}
-
-/* Efek Hover (Saat kursor menyentuh tombol) */
-.link-artikel.btn-article:hover {
-    background: var(--primary);
-    color: #ffffff;
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-}
-
-/* Efek Icon Panah saat Hover */
-.link-artikel.btn-article i {
-    transition: transform 0.3s ease;
-}
-
-.link-artikel.btn-article:hover i {
-    transform: translateX(3px);
-}
-
-/* Perbaikan Jarak di dalam Card Artikel */
-.service-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.service-card p {
-    flex-grow: 1; /* Memastikan konten teks mendorong tombol ke bawah agar sejajar */
-}
-
-.card-footer {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed #e2e8f0;
-}
-
-/* Khusus visitor-card karena ada transform: none sebelumnya */
+/* 💻 ANIMATION TRIGGERS FOR VISITOR CARD */
 @media (min-width: 481px) {
     .visitor-card { animation: fadeInRight 0.8s ease-out; }
-}
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
 }
