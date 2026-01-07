@@ -529,6 +529,58 @@ header {
     }
 }
 
+/* Styling Tombol Artikel agar Lebih Modern */
+.link-artikel.btn-article {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: fit-content;
+}
+
+/* Efek Hover (Saat kursor menyentuh tombol) */
+.link-artikel.btn-article:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Efek Icon Panah saat Hover */
+.link-artikel.btn-article i {
+    transition: transform 0.3s ease;
+}
+
+.link-artikel.btn-article:hover i {
+    transform: translateX(3px);
+}
+
+/* Perbaikan Jarak di dalam Card Artikel */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card p {
+    flex-grow: 1; /* Memastikan konten teks mendorong tombol ke bawah agar sejajar */
+}
+
+.card-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #e2e8f0;
+}
+
 /* Khusus visitor-card karena ada transform: none sebelumnya */
 @media (min-width: 481px) {
     .visitor-card { animation: fadeInRight 0.8s ease-out; }
