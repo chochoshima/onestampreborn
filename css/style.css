@@ -290,31 +290,59 @@ header {
 }
 
 .product-gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+/* Styling Kartu Produk dengan Bayangan Halus */
 .product-card {
-    background: white;
+    background: var(--white);
     border-radius: 20px;
-    overflow: visible; /* sebelumnya hidden */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari border radius */
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03); /* Border tipis agar terlihat rapi */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan awal yang sangat halus */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animasi smooth */
 }
 
+/* Efek saat Kartu Disentuh (Hover) */
+.product-card:hover {
+    transform: translateY(-10px); /* Kartu naik sedikit */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Bayangan jadi lebih tebal dan luas */
+}
+
+/* Efek pada Gambar di Dalam Kartu */
 .product-card img {
     width: 100%;
-    height: auto; /* ganti dari 100% ke auto */
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
 .product-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08); /* Gambar sedikit nge-zoom */
 }
 
+/* Tambahan: Overlay halus pada gambar saat hover */
+.product-card .zoom::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(37, 99, 235, 0.05); /* Warna biru brand tipis banget */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .zoom::after {
+    opacity: 1;
+}
+
+/* Styling Teks Info Produk di bawah Gambar */
 .product-info {
-    padding: 15px 20px;
+    padding: 20px;
+    background: var(--white);
     text-align: center;
     font-weight: 700;
-    font-size: 1rem;
     color: var(--dark);
+    z-index: 2;
+    position: relative;
 }
 
 /* ===============================
