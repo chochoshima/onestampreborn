@@ -51,10 +51,11 @@
 
         <!-- ACTIONS -->
         <div class="article-actions">
-          <a href="/" class="btn">← Kembali ke Beranda</a>
-          <button class="share-btn" onclick="shareFB()">Bagikan ke Facebook</button>
-        </div>
-
+			<a href="/" class="btn">← Kembali ke Beranda</a>
+			<button class="share-btn universal" onclick="shareUniversal()">
+			Bagikan Artikel
+		</button>
+	</div>
       </div>
 
     </article>
@@ -62,17 +63,69 @@
 
   <!-- SHARE SCRIPT -->
   <script>
-    function shareFB() {
-      const url = window.location.href;
-      window.open(
-        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
-        'fbshare',
-        'width=600,height=450'
-      );
-    }
-  </script>
+function shareUniversal() {
+  const title = document.title;
+  const url = window.location.href;
+  const text = document.querySelector('meta[name="description"]')?.content || '';
+
+  const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+  if (navigator.share && isMobile) {
+    navigator.share({ title, text, url }).catch(() => {});
+    return;
+  }
+
+  document.getElementById('shareModal').classList.add('active');
+
+  document.querySelectorAll('.share-item').forEach(btn => {
+    btn.onclick = () => {
+      const type = btn.dataset.share;
+
+      if (type === 'wa') {
+        window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`);
+      }
+
+      if (type === 'fb') {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+      }
+
+      if (type === 'copy') {
+        navigator.clipboard.writeText(url);
+        btn.innerText = "Link Tersalin ✓";
+        setTimeout(() => btn.innerHTML = '<i class="fa-solid fa-link"></i> Salin Link', 1200);
+      }
+    };
+  });
+}
+
+function closeShare() {
+  document.getElementById('shareModal').classList.remove('active');
+}
+</script>
+
+<div class="share-modal" id="shareModal" aria-hidden="true">
+  <div class="share-box">
+    <h3>Bagikan Artikel</h3>
+
+    <button class="share-item wa" data-share="wa">
+      <i class="fa-brands fa-whatsapp"></i>
+      WhatsApp
+    </button>
+
+    <button class="share-item fb" data-share="fb">
+      <i class="fa-brands fa-facebook"></i>
+      Facebook
+    </button>
+
+    <button class="share-item copy" data-share="copy">
+      <i class="fa-solid fa-link"></i>
+      Salin Link
+    </button>
+
+    <button class="share-close" onclick="closeShare()">Tutup</button>
+  </div>
+</div>
 
 </body>
 </html>
-
 
