@@ -670,47 +670,73 @@ header {
   border-radius: 8px;
   display: block;
 }
-/* ===== FILTER BUTTON KATALOG STAMPEL ===== */
-
+/* ===== FILTER WRAP ===== */
 .filter-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
 }
 
-/* button dasar */
+/* tombol filter */
 .filter-btn {
   padding: 10px 22px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
   border: 2px solid #e2e8f0;
-  background: #ffffff;
+  background: #fff;
   color: #334155;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
 }
 
-/* hover */
 .filter-btn:hover {
   background: #eff6ff;
   color: #1d4ed8;
   transform: translateY(-2px);
 }
 
-/* active */
 .filter-btn.active {
   background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: #ffffff;
+  color: #fff;
   border-color: transparent;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 20px rgba(37,99,235,.35);
 }
 
-/* icon optional */
-.filter-btn i {
-  margin-right: 6px;
+/* ===== ACTION SHARE ===== */
+.catalog-actions {
+  display: flex;
+  align-items: center;
 }
 
-/
+
+.btn-share {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(37,99,235,.3);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37,99,235,.45);
+}
+
+.btn-share:active {
+  transform: scale(.95);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  .catalog-actions {
+    justify-content: center; /* share ke tengah di mobile */
+  }
+}

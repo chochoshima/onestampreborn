@@ -285,3 +285,26 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
    LOAD AWAL
 ============================= */
 renderStempel("all");
+
+const shareBtn = document.getElementById("shareCatalog");
+
+if (shareBtn) {
+  shareBtn.addEventListener("click", async () => {
+    const shareData = {
+      title: "Katalog Stempel – One Stamp Reborn",
+      text: "Lihat katalog lengkap stempel flash & custom One Stamp Reborn",
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log("Share dibatalkan");
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link katalog berhasil disalin!");
+    }
+  });
+}
