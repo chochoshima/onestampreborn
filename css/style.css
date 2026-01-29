@@ -586,3 +586,131 @@ header {
 @media (min-width: 481px) {
     .visitor-card { animation: fadeInRight 0.8s ease-out; }
 }
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.stempel-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.stempel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.stempel-card h3 {
+  margin: 12px 0 4px;
+}
+
+.stempel-card .harga {
+  font-weight: 700;
+  color: #c62828;
+  margin-bottom: 10px;
+}
+/* ===== BADGE PRODUK STAMPEL ===== */
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* card image */
+.stempel-image-wrap {
+  position: relative;
+}
+
+/* container badge */
+.badge-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  z-index: 5;
+}
+
+/* badge dasar */
+.product-badge {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 20px;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,.25);
+}
+
+/* variasi */
+.product-badge.popular {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+}
+
+.product-badge.instansi {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+}
+
+.product-badge.standar {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+
+/* image */
+.stempel-image-wrap img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+/* ===== FILTER BUTTON KATALOG STAMPEL ===== */
+
+.filter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* button dasar */
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.filter-btn:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* active */
+.filter-btn.active {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* icon optional */
+.filter-btn i {
+  margin-right: 6px;
+}
+
+/

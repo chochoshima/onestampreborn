@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Katalog Stempel Flash Ungaran | ONESTAMP Reborn</title>
+  <meta name="description" content="Katalog stempel flash ONESTAMP Reborn Ungaran. Tersedia berbagai ukuran dan harga terjangkau. Pesan cepat via WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://onestampreborn.pages.dev/stempel.html" />
+
+  <!-- FONT & ICON SAMA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- CSS UTAMA -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<!-- HEADER SAMA PERSIS -->
+<header class="site-header">
+  <nav class="nav container" aria-label="Navigasi utama">
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <img src="images/logo.webp" alt="Logo ONESTAMP Reborn" class="logo-img" width="40" height="40" />
+        <div class="logo-text">
+          <span>ONESTAMP Reborn</span>
+          <small>Jasa pembuatan Stempel Warna</small>
+        </div>
+      </a>
+    </div>
+
+    <ul class="menu">
+      <li><a href="/">Beranda</a></li>
+      <li><a href="/#layanan">Layanan</a></li>
+      <li><a href="/#produk" class="active">Produk</a></li>
+      <li><a href="/#kontak" class="btn-nav">Kontak</a></li>
+    </ul>
+
+    <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO MINI (GAYA SAMA) -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="badge">Katalog Produk</span>
+      <h1>Katalog Stempel ONESTAMP Reborn</h1>
+      <p>
+        Pilihan stempel flash dan otomatis dengan berbagai ukuran.
+        Proses cepat, hasil rapi, cocok untuk UMKM, kantor, dan instansi.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/6289670910156" class="btn btn-primary" target="_blank">
+          Pesan via WhatsApp
+        </a>
+        <a href="/#produk" class="btn btn-outline">
+          Kembali ke Produk
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="images/stempel.webp" alt="Katalog stempel ONESTAMP Reborn" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- KATALOG -->
+<section class="section bg-light">
+  <div class="container">
+    <header class="section-header">
+      <h2>Daftar Stempel & Harga</h2>
+      <p>Harga dapat menyesuaikan desain dan jumlah pemesanan.</p>
+    </header>
+	<div class="filter-wrap">
+  <button class="filter-btn active" data-filter="all">Semua</button>
+  <button class="filter-btn" data-filter="persegi">Persegi</button>
+  <button class="filter-btn" data-filter="kotak">Kotak</button>
+  <button class="filter-btn" data-filter="bulat">Bulat</button>
+  <button class="filter-btn" data-filter="oval">Oval</button>
+  <button class="filter-btn" data-filter="instansi">Standar Instansi</button>
+  <button class="filter-btn" data-filter="standar">Ukuran Standar</button>
+</div>
+
+    <div class="services-grid" id="stempelCatalog">
+      <!-- Di-generate oleh JS -->
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER SAMA -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <strong>ONESTAMP Reborn</strong>
+      <p>Jasa stempel & percetakan profesional di Ungaran Barat.</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Kontak</h4>
+      <p>📍 Ungaran Barat, Jawa Tengah</p>
+      <p>📞 <a href="https://wa.me/6289670910156">0896-7091-0156</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- JS DATA -->
+<script src="data/stempel.js"></script>
+
+<!-- HAMBURGER MENU (SAMA) -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu');
+  hamburger.addEventListener('click', () => menu.classList.toggle('active'));
+</script>
+
+</body>
+</html>
