@@ -740,3 +740,30 @@ header {
     justify-content: center; /* share ke tengah di mobile */
   }
 }
+#app-splash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity .4s ease;
+}
+
+#app-splash img {
+  width: 96px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+#app-splash strong {
+  font-size: 1.1rem;
+  letter-spacing: .5px;
+}
+
+#app-splash small {
+  opacity: .6;
+  margin-top: 4px;
+}

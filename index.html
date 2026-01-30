@@ -66,7 +66,11 @@
 </script>
 </head>
 <body>
-
+<div id="app-splash" aria-hidden="true">
+  <img src="images/logo.webp" alt="ONESTAMP Reborn">
+  <strong>ONESTAMP Reborn</strong>
+  <small>Jasa Stempel Ungaran</small>
+</div>
 <header class="site-header">
   <nav class="nav container" aria-label="Navigasi utama">
     <div class="logo">
@@ -400,6 +404,15 @@
       .then(() => console.log("Service Worker registered"))
       .catch(err => console.error("SW failed:", err));
   }
+  document.addEventListener("DOMContentLoaded", () => {
+    const splash = document.getElementById("app-splash");
+    if (!splash) return;
+
+    setTimeout(() => {
+      splash.style.opacity = "0";
+      setTimeout(() => splash.remove(), 400);
+    }, 900);
+  });
 </script>
 </body>
 </html>
