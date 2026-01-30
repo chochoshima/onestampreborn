@@ -200,7 +200,7 @@ const stempelData = [
     nama: "Stempel Flash Gagang Kotak",
     kode: "SC-3513",
     ukuran: "30 × 10 mm",
-    harga: "Rp 65.000",
+    harga: "Rp 50.000",
     gambar: "images/stempel/stempel-flash-sc3513-ungaran.webp",
     bentuk: "kotak",
 	badges: ["laris"]
