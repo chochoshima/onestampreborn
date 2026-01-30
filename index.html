@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#111111">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <title>Jasa Stempel Ungaran - ONESTAMP Reborn | Jadi dalam 1 Jam</title>
   
@@ -390,5 +394,12 @@
   <i class="fa-brands fa-whatsapp"></i>
   <span>Pesan Sekarang</span>
 </a>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch(err => console.error("SW failed:", err));
+  }
+</script>
 </body>
 </html>
