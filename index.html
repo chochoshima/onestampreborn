@@ -399,6 +399,13 @@
   <span>Pesan Sekarang</span>
 </a>
 <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js")
+      .then(() => console.log("SW registered"))
+      .catch(err => console.error("SW failed:", err));
+  });
+}	
   document.addEventListener("DOMContentLoaded", () => {
     const splash = document.getElementById("app-splash");
     if (!splash) return;
