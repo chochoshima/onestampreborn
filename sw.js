@@ -2,7 +2,7 @@ const CACHE_NAME = "onestampreborn-v2";
 
 const ASSETS = [
   "/",
-  "/style.css",
+  "/css/style.css",
   "/data.js",
   "/manifest.json"
 ];
