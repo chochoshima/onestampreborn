@@ -1,9 +1,10 @@
-const CACHE_NAME = "onestampreborn-v2";
+const CACHE_NAME = "onestampreborn-v3";
 
 const ASSETS = [
   "/",
+  "/index.html",
+  "/stempel.html",
   "/css/style.css",
-  "/data.js",
   "/manifest.json"
 ];
 
@@ -28,21 +29,17 @@ self.addEventListener("activate", event => {
   );
 });
 
-// Fetch
+// Fetch (SAFE VERSION)
 self.addEventListener("fetch", event => {
-  event.respondWith(
-    fetch(event.request, { redirect: "follow" })
-      .then(response => {
-        // Jangan cache response redirect
-        if (response.redirected || !response.ok) {
-          return response;
-        }
 
-        return caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      })
-      .catch(() => caches.match(event.request))
+  if (event.request.method !== "GET") return;
+
+  // Jangan intercept external request
+  if (!event.request.url.startsWith(self.location.origin)) return;
+
+  event.respondWith(
+    caches.match(event.request).then(cached => {
+      return cached || fetch(event.request);
+    })
   );
 });
