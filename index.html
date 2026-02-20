@@ -405,16 +405,17 @@ if ("serviceWorker" in navigator) {
       .then(() => console.log("SW registered"))
       .catch(err => console.error("SW failed:", err));
   });
-}	
-  document.addEventListener("DOMContentLoaded", () => {
-    const splash = document.getElementById("app-splash");
-    if (!splash) return;
+}
 
-    setTimeout(() => {
-      splash.style.opacity = "0";
-      setTimeout(() => splash.remove(), 400);
-    }, 900);
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const splash = document.getElementById("app-splash");
+  if (!splash) return;
+
+  setTimeout(() => {
+    splash.style.opacity = "0";
+    setTimeout(() => splash.remove(), 400);
+  }, 900);
+});
 </script>
 </body>
 </html>
