@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://onestampreborn.pages.dev/sitemap.xml
+Disallow: /data/
+Disallow: /js/
+Disallow: /images/temp/
+
+Sitemap: https://onestampreborn.web.id/sitemap.xml
